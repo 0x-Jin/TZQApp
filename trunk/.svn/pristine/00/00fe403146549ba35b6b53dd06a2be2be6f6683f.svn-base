@@ -1,0 +1,456 @@
+angular.module('tzqApp.controllers', [])
+
+
+.controller('ChatsCtrl', function($scope, Chats) {
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on app start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter event:
+  //
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});ok??
+
+  $scope.chats = Chats.all();
+  $scope.remove = function(chat) {
+    Chats.remove(chat);
+  };
+})
+
+.controller('tabsController', function($scope, $ionicTabsDelegate){
+
+})
+
+.controller('indexController', function($scope, $stateParams, $ionicSlideBoxDelegate, testService){
+
+    $scope.addSub = function($event){
+      console.log(123)
+      $event.stopPropagation();
+    }
+    $scope.doRefresh = function(){
+      getTeam('v');
+    }
+
+    /**
+     * 广告点击
+     * @param index
+     */
+    $scope.adClick = function(index){
+      alert('Processing the Development.....');
+    }
+
+
+    $scope.switchTo = function(index, isTab){
+
+      $('.app-card-tab-title').children('a').filter('.active').removeClass('active');
+      $('.app-card-tab-title a:nth-child('+ index +')').addClass('active');
+      if(!isTab)
+        $ionicSlideBoxDelegate.$getByHandle('teamTab').slide(index-1);
+
+      if(index == 1){
+        getTeam('v')
+      }
+      else if(index == 2){
+        getTeam('person')
+      }
+      else{
+        //reload the wealth calendar
+      }
+    }
+
+    $scope.teamTabChange = function(index){
+      $scope.switchTo(index + 1, true);
+    }
+
+    getTeam('v');
+
+    function getTeam(type){
+      var _q = testService.getTop10();
+      _q.then(function(data){
+        if(type == 'v')
+          $scope.teamList = data.v;
+        else
+          $scope.teamList = data.person;
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+  })
+
+.controller('teamIndexPageController', function($scope, $stateParams, $ionicScrollDelegate, testService){
+
+    var _img = $('#testImg');
+    var _div = $('#testDiv');
+    $scope.s = function(){
+      var _p = $ionicScrollDelegate.$getByHandle('mainScroll').getScrollPosition();
+      var _zoolInt = _p.top;
+      _zoolInt = Math.abs(_zoolInt);
+      _zoolInt = _zoolInt * 0.1;
+      _zoolInt = _zoolInt<=1?1:_zoolInt;
+
+      //_img.css('transform', 'scale(' + Math.abs(_zoolInt) + ')');
+      //_div.css('transform', 'scaleY(' + Math.abs(_zoolInt) + ')');
+    }
+
+    $scope.list = [];
+    $scope.getDataList = function(){
+      var _q = testService.getTeamMemberList();
+      _q.then(function(data){
+        $scope.list =data.list;
+      }, function(data){
+
+      })
+    }
+
+    $scope.onRefresh = function() {
+
+      setTimeout(function () {
+        $scope.$broadcast('scroll.refreshComplete');
+      }, 1000);
+    }
+
+    $scope.showDetail = function(){
+      $scope.openModal();
+    }
+
+    $scope.getDataList();
+
+})
+/**
+ * 总榜controller
+ */
+.controller('rankSummaryController', function($scope, $stateParams, $ionicSlideBoxDelegate, testService){
+
+    $scope.teamList = [];//列表数据
+    $scope.isBigV = true;//当前是否是显示大V的列表
+    $scope.doRefresh = function(){
+      getRank('day');
+    }
+
+    $scope.switchTo = function(index, isTab, type){
+
+      $('.app-card-tab-title').children('a').filter('.active').removeClass('active');
+      $('.app-card-tab-title a:nth-child('+ index +')').addClass('active');
+      if(!isTab)
+        $ionicSlideBoxDelegate.$getByHandle('teamTab').slide(index-1);
+    }
+
+    $scope.changeTeam = function(type){
+      $scope.isBigV = type=='v';
+      $scope.switchTo(1, false, 'day')
+    }
+
+    $scope.teamTabChange = function(index){
+      var _type = 'day';
+      switch(index){
+        case 0:
+              _type = 'day';
+              break;
+        case 1:
+              _type = 'week';
+              break;
+        default :
+              _type = 'month';
+      }
+
+      $scope.switchTo(index + 1, true, _type);
+      getRank(_type);
+    }
+
+    getRank('day');
+
+    function getRank(type){
+      var _q = testService.getRank();
+      _q.then(function(data){
+        if(type == 'day')
+          $scope.teamList = data.day;
+        else if(type == 'week')
+          $scope.teamList = data.week;
+        else
+          $scope.teamList = data.month;
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+  })
+
+/**
+ * 组队
+ */
+  .controller('creationController', function($scope, $rootScope, $stateParams, $ionicHistory, testService){
+
+    $scope.goBack = function() {
+      $ionicHistory.goBack();
+    };
+  })
+  .controller('teamCreationController', function($scope, $stateParams, $location, testService){
+    $scope.rule = '';
+    $scope.my = {isChecked:false};
+
+
+    var _ruleQ = testService.getCreateTeamRule();
+    _ruleQ.then(function(data){
+      $scope.rule = data.rule;
+    }, function(data){});
+
+    $scope.next = function(){
+      if(!$scope.my.isChecked){
+        return false;
+      }
+      else{
+        $location.path('/team-creation/action');
+      }
+    }
+})
+  .controller('actionController', function($scope, $stateParams, $location, testService){
+    $scope.next = function(type){
+      if(type == 1){
+        $location.path('/team-creation/teamtype');
+      }
+      else{
+        $location.path('/team-creation/join-search');
+      }
+    }
+  })
+  .controller('teamTypeSelectController', function($scope, $stateParams, $location, testService){
+    $scope.next = function(type){
+      if(type == 1){
+        $location.path('/team-creation/teamname/1');
+      }
+      else{
+        $location.path('/team-creation/teamname/2');
+      }
+    }
+  })
+  .controller('teamNameController', function($scope, $stateParams, $location, testService){
+    $scope.createTeamType = $stateParams.type;
+    $scope.my = {teamName:'', isChecked:false};
+
+    $scope.next = function(type){
+      if($scope.my.teamName.trim() == ''){
+        return false;
+      }
+      else{
+        $location.path('/team-creation/create-ok/newteamId123');//TODO, to create the team and get the new id
+      }
+    }
+
+    $scope.$watch('my.teamName', function(newdata, olddata){
+      if(newdata.trim() == ''){
+        $scope.my.isChecked = false;
+      }
+      else{
+        $scope.my.isChecked = true;
+      }
+    });
+  })
+  .controller('createOkController', function($scope, $stateParams, $location, testService){
+    $scope.createTeamType = $stateParams.teamId;
+    console.log($scope.createTeamType);
+    $scope.next = function(type){
+
+    }
+  })
+  .controller('joinSearchController', function($scope, $stateParams, $location, testService){
+
+    $scope.list = [];
+    $scope.my = {keyword:'', show:false};
+    $scope.search = function(keyword){
+      var _q = testService.searchTeamListByKeyword(keyword);
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+
+    $scope.$watch('my.keyword', function(newvalue, oldvalue){
+      if(newvalue == ''){
+        $scope.my.show = false;
+      }
+      else{
+        $scope.my.show =  true;
+        $scope.search(newvalue);
+      }
+    });
+
+    $scope.joinTeam = function(team){
+      $location.path('/team-creation/join-team-info/' + team.id);
+    }
+  })
+  .controller('joinTeamInfoController', function($scope, $stateParams, $location, testService) {
+      $scope.my = {toJoinTeamId:$stateParams.teamId};
+      $scope.team = {
+        img:'img/temp/2_17.png',
+        teamName:'勇往直前,赚钱无敌',
+        memberNo:8,
+        creator:{
+          id:12,
+          name:'Allen Wong'
+        }
+      };//TODO get the team by the teamId
+      console.log($scope.my.toJoinTeamId);
+
+      $scope.confirmJoion = function(){
+        $scope.openModal();
+      }
+
+
+    $scope.callBack = function(){
+      $location.path('/tab/account-index');
+    }
+  })
+/**
+ * 交易首页
+ */
+  .controller('tradeIndexController', function($scope, $stateParams, $location, testService){
+
+    $scope.next = function(type){
+
+    }
+  })
+
+/**
+ * 关注首页
+ */
+  .controller('subIndexController', function($scope, $stateParams, $location, testService){
+    $scope.next = function(type){
+
+    }
+  })
+/**
+ * 发现首页
+ */
+  .controller('discoveryIndexController', function($scope, $stateParams, $location, testService){
+    $scope.next = function(type){
+
+    }
+  })
+
+
+/**
+ * 个人中心首页
+ */
+  .controller('accountIndexController', function($scope, $stateParams, $location, $state, testService){
+
+    $scope.my = {login:false}
+    var _islogin = localStorage.getItem('loginSuccess');
+    if(_islogin){
+      $scope.my.login = true;
+    }
+
+      $scope.goToRegister = function(){
+        $location.path('/register/phone-no');
+      }
+
+    ionic.EventController.on('loginEvent', function(){
+      var _islogin = localStorage.getItem('loginSuccess');
+      if(_islogin){
+        $scope.my.login = true;
+      }
+    });
+
+    $scope.logout = function(){
+      localStorage.removeItem('loginSuccess');
+      $scope.my.login = false;
+      $location.path('/tab/account-index');
+    }
+  })
+  .controller('registerIndexController', function($scope, $stateParams, $location, $ionicHistory, testService){
+    $scope.my = {isChecked:false};
+
+    $scope.next = function(path){
+      $location.path(path);
+    }
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+  .controller('validatePhoneNoController', function($scope, $stateParams, $location, $interval, testService){
+    $scope.my = {isChecked:false, vCode:'', timeup:true, countdown:10};
+    var _c = null;
+    $scope.startVcodeCountDown = function(){
+      //TODO, to send the validation code to the phone
+      if(_c == null) {
+        $scope.my.timeup = false;
+        $scope.my.countdown = 10;
+        _c = $interval(function () {
+          $scope.my.countdown--;
+          if ($scope.my.countdown == 0) {
+            $scope.my.timeup = true;
+            $interval.cancel(_c);
+            _c = null;
+          }
+        }, 1000);
+      }
+    }
+    $scope.next = function(path){
+      $location.path(path);
+    }
+
+    $scope.$watch('my.vCode', function(newdata, olddata){
+      if(newdata.trim() == ''){
+        $scope.my.isChecked = false;
+      }
+      else{
+        $scope.my.isChecked = true;
+      }
+    });
+  })
+  .controller('setPwdController', function($scope, $stateParams, $location, testService){
+    $scope.my = {isChecked:true, pwd:'', repwd:'', code:''};
+
+
+    $scope.submitRegister = function(){
+      //TODO, submit the user information
+      $scope.openModal();
+
+    }
+
+    $scope.callBack = function(){
+      $location.path('/register/login')
+    }
+
+    $scope.$watch('my.repwd', function(newdata, olddata){
+      console.log($scope.my.pwd);
+      if(newdata != $scope.my.pwd){
+        $scope.my.isChecked = false;
+      }
+      else{
+        $scope.my.isChecked = true;
+      }
+    });
+
+  })
+
+/**
+ * 登录
+ */
+  .controller('loginController', function($scope, $stateParams, $location, $state, testService){
+
+    $scope.my = {isChecked:true, phoneNo:'', pwd:'', errorMsg:'', errorMsgs:{a:'账号信息错误,登录失败', b:'输入完整的登录信息'}};
+
+    $scope.login = function(){
+
+      if($scope.my.phoneNo == '' || $scope.my.pwd == ''){
+        $scope.my.errorMsg = $scope.my.errorMsgs.b;
+        $scope.my.isChecked = false;
+      }
+      else{
+        //TODO, to implement the login function
+        $scope.my.isChecked = true;
+        localStorage.setItem('loginSuccess', 'true');
+        $location.path('/tab/account-index');
+        ionic.EventController.trigger('loginEvent');
+      }
+
+    }
+  })
+
+

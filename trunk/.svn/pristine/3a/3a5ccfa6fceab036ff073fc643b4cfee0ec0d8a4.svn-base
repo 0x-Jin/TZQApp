@@ -1,0 +1,1034 @@
+/**
+ * Created by apple on 15/11/16.
+ */
+angular.module('tzqApp.main-controllers', [])
+
+/**
+ * 首页
+ */
+  .controller('teamIndexPostsController', function($scope, $ionicHistory) {
+    //设置文本框的高度
+    function setTextHeight(){
+      var height =  $(document).height() - 45;
+      height = 0.4 * height + 'px';
+      $("#postsText").css( 'height', height);
+    }
+    setTextHeight();
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+  .controller('teamIndexNoticeController', function($scope, $ionicHistory) {
+    //设置文本框的高度
+    function setTextHeight(){
+      var height =  $(document).height() - 45;
+      height = 0.3 * height + 'px';
+      $("#postsText").css( 'height', height);
+    }
+    setTextHeight();
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+  .controller('teamIndexQuitController', function($scope, $ionicHistory) {
+
+    $scope.my = { isLeader: true };
+
+    var _isLeader = false;;//后台数据判断
+    $scope.my.isLeader = _isLeader;
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+  .controller('teamIndexTabDiscussDetailController', function($scope, $ionicHistory, $stateParams, testService) {
+
+    $scope.my = { discussDetail:{} }
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    function getDetailData(){
+
+      switch( $stateParams.tabName ){
+        case 'index':{
+          var _q = testService.getDiscussList();
+          break;
+        }
+        case 'sub':{
+          var _q = testService.getDiscussList();
+          break;
+        }
+        case 'account':{//个人中心 -> 圈子
+          var _q = testService.getDiscussList();
+          break;
+        }
+        case 'news-content':{//个人中心 -> 消息
+          var _q = testService.getAccountDynamicList();
+          break;
+        }
+        case 'dynamic':{//个人中心 -> 动态
+          var _q = testService.getAccountDynamicList();
+          break;
+        }
+        case 'collection':{//个人中心 -> 收藏
+          var _q = testService.getAccountCollectionList();
+          break;
+        }
+      }
+
+      _q.then(function(data){
+        var list = data.list;
+        //根据id 获取后台数据
+          for (var i = 0; i < list.length; i++) {
+            if (list[i].member.id === parseInt($stateParams.id)) {
+              $scope.my.discussDetail = list[i];
+            }
+          }
+      }, function(data){});
+
+    }
+    getDetailData();
+
+    $scope.addGood = function( index ){
+      //判断是否已点赞
+    }
+    $scope.addFeedback = function( index ){//添加评论
+    }
+
+  })
+
+  .controller('teamIndexInviteController', function($scope, $location, $ionicHistory, $interval, $ionicActionSheet, testService) {
+
+    $scope.my = { toggle: false }
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+    var windowHeight = $(document).height() - 45;//app-common-header的高度是45px
+    var riseBoxHeight = $("#riseBox").height();
+    var top = windowHeight - riseBoxHeight;
+
+    $("#riseBox").css( "top", windowHeight + "px");//初始化
+
+    $scope.showOrHide = function() {
+
+      $scope.my.toggle = !$scope.my.toggle;
+
+      if( $scope.my.toggle ){//上升
+        $("#riseBox").css( "display", "block");
+
+        var _t = $interval( function(){
+          var temp = document.getElementById("riseBox").offsetTop;
+          if( temp > top ){
+            temp -= 2;
+            $("#riseBox").css("top", temp + "px");
+          }else{
+            $interval.cancel(_t);
+          }
+        }, 5);
+
+      }else{
+        $("#riseBox").css( "display", "block");
+
+        var _t = $interval( function(){
+          var temp = document.getElementById("riseBox").offsetTop;
+          if( temp < windowHeight ){
+            temp += 2;
+            $("#riseBox").css("top", temp + "px");
+          }else{
+            $("#riseBox").css( "display", "none");
+            $interval.cancel(_t);
+          }
+        }, 5);
+      }
+
+    }
+
+  })
+
+  .controller('teamMemberListController', function($scope, $ionicPopup, testService) {
+
+    $scope.list = [];
+    function getMember(){ //控制器内调用
+      var _q = testService.getTeamMemberList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getMember();
+
+    $scope.showConfirm = function( item ){
+      var confirmPopup = $ionicPopup.confirm({
+        template:'<br/><br/><div style="text-align: center; font-size: 18px"><strong>确定要把此人从圈内删除吗?</strong></div><br/><br/><br/><br/>',
+        buttons: [{
+          text: '取消',
+          type: 'button-positive',
+          onTap: function(e) {
+            //e.preventDefault();//确认窗口不关闭
+            console.log("not sure");
+          }
+        }, {
+          text: '确定',
+          type: 'button-positive',
+          onTap: function(e) {
+            console.log("sure");
+          }
+        }]
+      });
+      //console.log(item);
+    }
+
+  })
+
+
+/**
+ * 关注首页
+ */
+  .controller('subIndexController', function($scope, $ionicHistory, $interval, $ionicSlideBoxDelegate, $stateParams, $location, testService){
+
+    $scope.my = { login:false };
+    var _islogin = localStorage.getItem('loginSuccess');
+    if(_islogin){
+      $scope.my.login = true;
+    }else{
+      $location.path('/login/login');//跳转到登录页面
+    }
+
+    //监听来自登录页面的事件
+    ionic.EventController.on('loginEvent', function(){
+      var _islogin = localStorage.getItem('loginSuccess');//localStorage是本地存储
+      if(_islogin){
+        $scope.my.login = true;//本作用域的数据。已登录
+      }
+    });
+
+    //监听来自退出页面的事件
+    ionic.EventController.on('logoutEvent', function(){
+      var _islogin = localStorage.getItem('loginSuccess');//localStorage是本地存储
+      if(_islogin){
+      }else{
+        $scope.my.login = false;//本作用域的数据。未登录
+        $location.path('/login/login');//跳转到登录页面
+      }
+    });
+
+    //下拉刷新
+    $scope.doRefresh = function(){
+      $scope.$broadcast("scroll.refreshComplete");//通知框架刷新
+    }
+
+    //已关注的列表
+    $scope.teamList = [];
+    function getSubList(type){//控制器内部调用
+      var _q = testService.getSubList();
+      _q.then(function(data){
+        $scope.teamList = data.list;
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+    getSubList();
+
+    //推荐关注
+    $scope.recommendList = [];
+
+    function getRecommend(){
+      var _q = testService.getRecommendList();
+      _q.then(function(data){
+        $scope.recommendList = data.list;
+
+        $scope.recommendListLength = $scope.recommendList.length;
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+    getRecommend();
+
+    //换一换按钮
+    $scope.nextIndex = function(){
+      console.log("aa");
+    }
+
+  })
+
+/**
+ * 个人中心
+ */
+
+  .controller('accountNewsController', function($scope, $location, $ionicHistory, testService) {
+
+    $scope.my = { href:'#' };
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.next = function( d ){
+      if( d.type == '交易消息' ){
+        $scope.my.href = "#/tab/account-news-content-trade";
+      }else{
+        $scope.my.href = "#/tab/account-news-content/" + d.id;
+      }
+    }
+
+    //消息列表
+    $scope.newsList = [];
+    function getNewsList(){//控制器内部调用
+      var _q = testService.getAccountNewsList();
+      _q.then(function(data){
+        $scope.newsList = data.list;
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+    getNewsList();
+
+  })
+
+  .controller('accountNewsContentController', function($scope, $location, $ionicHistory, $stateParams, testService) {
+
+    $scope.my = { "type":'', "popData":'' };
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    //根据id，获取后台数据，判断获取什么类型的消息数据
+    switch( $stateParams.id ){
+      case'1': $scope.my.type = 'cycleNews'; break;
+      case'2': $scope.my.type = 'systemNews'; break;
+      case'3': $scope.my.type = 'interactionNews'; break;
+    }
+
+    //获取对应的消息列表
+    $scope.newsContentList = [];
+    function getNewsContentList(){//控制器内部调用
+      var _q = testService.getAccountNewsContentList();
+      _q.then(function(data){
+
+        switch( $scope.my.type ){//根据id判断获取什么类型的消息数据
+          case'cycleNews': $scope.newsContentList = data.list[1].cycleNews; break;
+          case'systemNews': $scope.newsContentList = data.list[0].systemNews; break;
+          case'interactionNews': $scope.newsContentList = data.list[2].interactionNews; break;
+        }
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+    getNewsContentList();
+
+    //根据id 获取后台数据
+    function getById( list, id ){
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id === parseInt(id)) {
+          return list[i];
+        }
+      }
+      return null;
+    }
+
+    $scope.showDetail = function( id ){
+
+      switch( $scope.my.type ){
+        case'interactionNews':{
+          $location.path('/tab/news-content/account-detail/'+id);
+          break;
+        }
+        case'cycleNews':{
+          $scope.my.popData = getById( $scope.newsContentList, id );
+          $scope.openModal();//打开弹出框
+          break;
+        }
+      }
+    }
+
+  })
+
+  .controller('accountNewsContentTradeController', function($scope, $location, $ionicHistory, $stateParams, testService) {
+
+    $scope.my = { "popData":'' };
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    //获取对应的消息列表
+    $scope.newsContentList = [];
+    function getNewsContentList(){//控制器内部调用
+      var _q = testService.getAccountNewsContentList();
+      _q.then(function(data){
+        $scope.newsContentList = data.list[3].tradeNews;
+
+        setTimeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        },1000)
+      }, function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      })
+    }
+    getNewsContentList();
+
+    //根据id 获取后台数据
+    function getById( list, id ){
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id === parseInt(id)) {
+          return list[i];
+        }
+      }
+      return null;
+    }
+
+    $scope.showDetail = function( id ){
+      $scope.my.popData = getById( $scope.newsContentList, id );
+      $scope.openModal();//打开弹出框
+    }
+
+    $scope.sendWinTicket = function(){//判断是否能送赢家券，按钮是否可点击
+      $scope.closeBtn();
+    }
+
+    $scope.closeBtn = function(){
+      $scope.closeModal();
+    }
+
+  })
+
+  //交易历史
+  .controller('accountHistoryController', function($scope, $ionicHistory, $stateParams, $location, $cordovaCalendar, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getHisList(){
+      var _q = testService.getAccountHistoryList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getHisList();
+
+    ///////////////////////////////////////////////////////////////////////////
+    $scope.func = function(){
+      console.log( $cordovaCalendar.createCalendar );
+      $scope.flag = "pyb";
+      $cordovaCalendar.createCalendar("pyb").then(function (result) {
+        $scope.flag = "success";
+        // success
+      }, function (err) {
+        $scope.flag = "error";
+        // error
+      });
+
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+
+  })
+
+  .controller('accountBrokersController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+    $scope.showCode = function(){
+      $scope.openModal();
+    }
+  })
+
+  .controller('accountDynamicController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getDynList(){
+      var _q = testService.getAccountDynamicList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getDynList();
+
+  })
+
+  .controller('accountCollectionController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getColList(){
+      var _q = testService.getAccountCollectionList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getColList();
+  })
+
+  .controller('accountSettingController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+  .controller('accountIncomeController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+
+    var offsetLeft = document.getElementById("fixedBox").offsetWidth;
+    $("#slideBox").css( 'left', offsetLeft + "px");
+    $("#slideBox").css( 'top', "-4px");
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getIncList(){
+      var _q = testService.getAccountIncomeList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getIncList();
+  })
+
+  .controller('accountCustomerController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+
+    var offsetLeft = document.getElementById("fixedBox").offsetWidth;
+    $("#slideBox").css( 'left', offsetLeft + "px");
+    $("#slideBox").css( 'top', "-4px");
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getCusList(){
+      var _q = testService.getAccountCustomerList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getCusList();
+
+  })
+
+  .controller('accountCloseController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+
+    var offsetLeft = document.getElementById("fixedBox").offsetWidth;
+    $("#slideBox").css( 'left', offsetLeft + "px");
+    $("#slideBox").css( 'top', "-4px");
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getCloList(){
+      var _q = testService.getAccountCloseList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getCloList();
+  })
+
+  .controller('accountPositionController', function($scope, $ionicHistory, $stateParams, $location, testService) {
+
+    var offsetLeft = document.getElementById("fixedBox").offsetWidth;
+    $("#slideBox").css( 'left', offsetLeft + "px");
+    $("#slideBox").css( 'top', "-4px");
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.list = [];
+    function getPosList(){
+      var _q = testService.getAccountPositionList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getPosList();
+  })
+
+  .controller('accountSettingInfoController', function($scope, $location, $ionicHistory,  $ionicActionSheet, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.changeImg = function() {
+
+    };
+
+    //退出登录
+    $scope.logout = function(){
+      localStorage.removeItem('loginSuccess');
+      ionic.EventController.trigger('logoutEvent');//触发一个事件
+    }
+  })
+
+  //消息推送
+  .controller('accountSettingPushController', function($scope, $location, $ionicHistory, testService) {
+    //初始化
+    $scope.my = { pushFlag:true, commentFlag:true, transferFlag:false, allTransferFlag:true };
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+  .controller('accountSettingFeedbackController', function($scope, $location, $ionicHistory, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+  .controller('accountWinTicketController', function($scope, $location, $ionicHistory, testService) {
+
+    $scope.my = { winTabs:0,
+      used_tenList:[], used_twoHundredList:[], unUsed_tenList:[], unUsed_twoHundredList:[], useless_tenList:[], useless_twoHundredList:[] };
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    // 0：未使用； 1：已使用； 2：已过期
+    $scope.selectTab = function( index ){
+      $("#tab" + index).addClass('active');
+      $("#tab" + index).siblings().removeClass('active');
+      $scope.my.winTabs = index;
+    }
+    $scope.slideHasChanged = function( index ){
+      $("#tab" + index).addClass('active');
+      $("#tab" + index).siblings().removeClass('active');
+      $scope.my.winTabs = index;
+    }
+
+    //向arr数组中加入num个元素
+    function pushItemToArray( arr, num ){
+      for( var i=0; i < num; i++ ){
+        arr.push( i );
+      }
+    }
+
+    function getAccountWinTicketList(){
+      var _q = testService.getAccountWinTicketList();
+      _q.then(function(data){
+        $scope.list = data.list;
+
+        pushItemToArray( $scope.my.unUsed_tenList, $scope.list[0].unUsed.ten );
+        pushItemToArray( $scope.my.unUsed_twoHundredList, $scope.list[0].unUsed.twoHundred );
+        pushItemToArray( $scope.my.used_tenList, $scope.list[1].used.ten );
+        pushItemToArray( $scope.my.used_twoHundredList, $scope.list[1].used.twoHundred );
+        pushItemToArray( $scope.my.useless_tenList, $scope.list[2].useless.ten );
+        pushItemToArray( $scope.my.useless_twoHundredList, $scope.list[2].useless.twoHundred );
+
+      }, function(data){});
+    }
+    getAccountWinTicketList();
+
+
+  })
+
+  .controller('accountWinTicketRecommendGiftController', function($scope, $location, $ionicHistory, testService) {
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+  })
+
+/**
+ * 发现首页
+ */
+  .controller('discoveryIndexController', function($scope, $rootScope,  $stateParams, $location, testService){
+
+    //下拉刷新
+    $scope.doRefresh = function(){
+      $scope.$broadcast("scroll.refreshComplete");//通知框架刷新
+    }
+
+    $scope.list = [];
+    function getDisList(){
+      var _q = testService.getDiscoveryList();
+      _q.then(function(data){
+        $scope.list = data.list;
+      }, function(data){});
+    }
+    getDisList();
+
+  })
+
+  .controller('discoveryDetailController', function($scope, $location, $ionicHistory, $stateParams, testService) {
+
+    $scope.my = { discoveryDetail:{} };
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    function getDetailData(){
+
+      var _q = testService.getDiscoveryList();
+      _q.then(function(data){
+        var list = data.list;//注意 .list！！！
+        //根据id 获取后台数据
+        for(var i = 0; i < list.length; i++) {
+          if (list[i].id === parseInt($stateParams.id)) {
+            $scope.my.discoveryDetail = list[i];
+            break;
+          }
+        }
+      }, function(data){});
+    }
+    getDetailData();
+
+  })
+
+
+/**
+ * 登录
+ */
+  .controller('loginController', function($scope, $rootScope, $stateParams, $location, $ionicHistory, $state, testService){
+
+    $scope.my = {isChecked:true, phoneNo:'', pwd:'', errorMsg:'', errorMsgs:{a:'账号信息错误,登录失败', b:'输入完整的登录信息'}};
+
+    //监听来自退出登录的事件  不能监听？？？？？
+    ionic.EventController.on('logoutEvent', function(){
+      console.log("tab.account-setting-info -> logout");
+      var _islogin = localStorage.getItem('loginSuccess');//localStorage是本地存储
+      if(_islogin){//已登录
+      }else{
+      }
+    });
+
+    //登录后跳转
+    function jumpTo(){
+      console.log( $rootScope.previousState.name );//前一页面
+
+      switch( $rootScope.previousState.name ){
+        case'tab.trade-index':
+        case'tab.sub-index': $ionicHistory.goBack(); break;
+        default: $location.path('/tab/account-index');
+        //退出登录后重新登录、从未登录、忘记密码重设密码后登录
+      }
+    }
+
+    //点击登录
+    $scope.login = function(){
+
+      if($scope.my.phoneNo == '' || $scope.my.pwd == ''){//没输入
+        $scope.my.errorMsg = $scope.my.errorMsgs.b;
+        $scope.my.isChecked = false;
+      }
+      else{
+        //TODO, to implement the login function
+        //判断输入是否正确
+        $scope.my.isChecked = true;
+        localStorage.setItem('loginSuccess', 'true');
+        ionic.EventController.trigger('loginEvent');
+
+        //判断是否是新用户
+        if( 1 ){
+          $scope.openModal();
+
+        }else{
+          jumpTo();
+        }
+
+      }
+
+    }
+
+    //注册有礼
+    $scope.receiveRegisterGift = function(){
+      $scope.closeModal();
+      jumpTo();
+    }
+
+  })
+
+  //修改密码 -> 输入原密码  /  输入交易密码
+  .controller('InputPswController', function($scope, $rootScope, $location, $stateParams, $ionicHistory,  $ionicActionSheet, deviceServices, testService) {
+
+    $scope.my = { pwd:'', passed:true, id:-1, LoginPswOrTradePsw:''};
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.my.id = $stateParams.id;
+    var _password;//保存从后台获取的数据
+    if( $stateParams.id == 0 ){//登录密码
+      _password = '123';
+      $scope.my.LoginPswOrTradePsw = '原密码';
+
+    }else if( $stateParams.id == 1 ){//交易密码
+      _password = '123456';
+      $scope.my.LoginPswOrTradePsw = '交易密码';
+    }
+
+    $scope.$watch('my.pwd', function(newValue, oldValue){
+
+      if( newValue.length == _password.length ){
+        if(newValue == _password){
+          $scope.my.passed = true;
+
+          if( $rootScope.previousState.name == 'tab.account-setting-info' ){//修改密码 -> 输入原密码
+            $location.path('/login/changePsw/' + $stateParams.id);//跳转到修改密码页面
+
+          }else{//输入交易密码
+            localStorage.setItem('tradePswSuccess', 'true');
+            ionic.EventController.trigger('tradePswEvent');
+            $scope.goBack();
+          }
+
+          $scope.my.pwd = '';
+        }
+        else{
+          $scope.my.passed = false;
+          deviceServices.vibrate(2);
+        }
+
+      } else if( newValue.length < _password.length ){
+        $scope.my.passed = true;
+
+      }else if( newValue.length > _password.length ){
+        $scope.my.passed = false;
+
+      }
+    })
+
+  })
+
+  //修改密码
+  .controller('ChangePswController', function($scope, $rootScope, $location, $stateParams,  $ionicHistory,  $ionicActionSheet, testService) {
+
+    $scope.my = { login:false, isChecked:true, isDisabled:true,  pwd:'', repwd:'', LoginPswOrTradePsw:'', placeholderText:''};
+
+    var _islogin = localStorage.getItem('loginSuccess');//localStorage是本地存储
+    if(_islogin){//已登录
+      $scope.my.login = true;
+    }else{
+      $scope.my.login = false;
+    }
+
+    if( $stateParams.id == 0 ){//修改登录密码
+      $scope.my.LoginPswOrTradePsw = '登录密码';
+      $scope.my.placeholderText = '输入新密码';
+
+    }else if( $stateParams.id == 1 ){//修改交易密码
+      $scope.my.LoginPswOrTradePsw = '交易密码';
+      $scope.my.placeholderText = '输入6位新密码';
+    }
+
+    $scope.goBack = function(){
+      //忘记密码：如果是已登录修改密码时忘记密码，返回-3返回到设置个人信息页面；如果是登录时忘记密码，返回-2返回到登录页面
+      if( $rootScope.previousState.name == 'login.forgetPsw'  &&  $scope.my.login ){//忘记密码（修改密码、登录时）
+        $ionicHistory.goBack(-3);
+      }else{// login.inputPsw
+        $ionicHistory.goBack(-2);
+      }
+      $scope.my.pwd = '';
+      $scope.my.repwd = '';
+    }
+
+    $scope.changeLoginPswConfirm = function() {
+      //修改后台数据
+      if( $stateParams.id == 0 ){//修改登录密码
+
+      }else if( $stateParams.id == 1 ){//修改交易密码
+
+      }
+
+      $scope.goBack();//返回
+    }
+
+    //监听输入内容，确定是否显示错误信息，以及提交按钮是否可用
+    function watchInput(){
+
+      if($scope.my.pwd != $scope.my.repwd){//两次密码不同
+        $scope.my.isChecked = false;
+        $scope.my.isDisabled = true;
+
+      } else{//两次密码相同
+        $scope.my.isChecked = true;
+        if( $scope.my.pwd != '' ){//两次密码相同，且都不为空
+
+          if( $stateParams.id == 0 ) {//修改登录密码
+            $scope.my.isDisabled = false;
+
+          }else{//修改交易密码
+            if( $scope.my.pwd.length == 6 ){
+              $scope.my.isDisabled = false;
+            }else{
+              $scope.my.isDisabled = true;
+            }
+          }
+        }
+      }
+    }
+
+    //监听密码（防止输入确认密码后，再更改密码）
+    $scope.$watch('my.pwd', function(newdata, olddata){
+      if( $scope.my.repwd != ''){
+        watchInput();
+      }
+    });
+
+    //监听确认密码
+    $scope.$watch('my.repwd', function(newdata, olddata){
+      watchInput();
+    });
+
+  })
+
+  //忘记密码
+  .controller('ForgetPswController', function($scope, $location, $stateParams, $ionicHistory, $interval, testService) {
+    $scope.my = { phoneNum:'', isChecked:false, vCode:'', vCodeChecked:true, timeup:true, countdown:"验证码" }
+
+    var _phoneNum = '15625042002';
+    $scope.my.phoneNum = _phoneNum;
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    var _c = null;
+    $scope.startVcodeCountDown = function(){
+      //TODO, to send the validation code to the phone
+      if(_c == null) {
+        $scope.my.timeup = false;
+        var temp = 10;
+        $scope.my.countdown = temp + "秒";
+
+        _c = $interval(function () {
+          temp --;
+          $scope.my.countdown = temp + "秒";
+          if (temp < 0) {
+            $scope.my.timeup = true;
+            $scope.my.countdown = "验证码";
+            $interval.cancel(_c);
+            _c = null;
+          }
+        }, 1000);
+      }
+    }
+
+    $scope.$watch('my.vCode', function(newdata, olddata){
+      if(newdata.trim() == ''){//没输入
+        $scope.my.isChecked = false;
+      } else{
+        $scope.my.isChecked = true;
+      }
+    });
+
+    var _vCode = "123";
+    $scope.next = function(){
+      //判断输入是否正确
+      if( $scope.my.vCode == _vCode ){
+        $scope.my.vCodeChecked = true;
+        $location.path("/login/changePsw/" + $stateParams.id);
+        $scope.my.vCode = '';
+
+      }else{
+        $scope.my.vCodeChecked = false;
+      }
+    }
+  })
+
+/**
+ * 查找、加入圈子
+ */
+  .controller('searchController', function($scope, $location, $ionicHistory, $interval, $ionicActionSheet, testService) {
+
+    $scope.my = { searchText:'', href:'#' }
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.searchList = [];
+    function getSearchData(){
+      var _q = testService.getTeamSearchList();
+      _q.then(function(data){
+        $scope.searchList = data.list;//注意 .list
+      }, function(data){});
+    }
+
+    $scope.$watch('my.searchText', function(newdata, olddata){
+
+      if( $scope.my.searchText == ''){//没输入，不跳转
+        $scope.my.href = "#";
+
+      }else{
+        $scope.my.href = "#/tab/searchResult/" + $scope.my.searchText;
+
+        if( newdata == '广州'){
+          getSearchData();//获取数据，显示
+
+        }else{
+          $scope.searchList = [];
+        }
+      }
+
+    });
+
+  })
+
+  .controller('searchResultController', function($scope, $location, $ionicHistory, $stateParams, $interval, $ionicActionSheet, testService) {
+
+    $scope.my = { cycleName:'' }
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+    $scope.my.cycleName = $stateParams.name
+
+  })
+
+  .controller('joinRequestController', function($scope, $location, $ionicHistory, $stateParams, $interval, $ionicActionSheet, testService) {
+
+    $scope.my = { }
+
+    $scope.goBack = function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.joinRequest = function(){
+      //do something
+      $ionicHistory.goBack(-3);//返回
+    }
+
+    //设置文本框的高度
+    function setTextHeight(){
+      var height =  $(document).height() - 45;
+      height = 0.2 * height + 'px';
+      $("#requestText").css( 'height', height);
+    }
+    setTextHeight();
+
+  })

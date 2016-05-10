@@ -1,0 +1,37 @@
+
+<ion-view view-title="加入圈子" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div class="clear"></div>
+    <div style="background: #fff; border-radius: 5px;padding: 10px; text-align: center;">
+      <img src="{{team.img}}" width="100px" height="auto">
+      <div><h3>{{team.teamName}}</h3></div>
+        <div>成员数量:{{team.memberNo}}</div>
+        <div>创建者:{{team.creator.name}}</div>
+
+    </div>
+
+
+    <div class="clear"></div>
+
+    <span>请简单的自我介绍一下,以便让管理员快速了解您:</span>
+    <label class="item item-input" style="border-radius: 5px;">
+      <textarea maxlength="50" placeholder="50字以内"></textarea>
+    </label>
+    <div class="clear"></div>
+    <a class="button app-big-button" ng-click="confirmJoion()">确认加入</a>
+  </ion-content>
+</ion-view>
+
+
+<tzq-modal modal-id="app-popup-confirm-join">
+  <div style="text-align: center; ">
+    <img src="img/ok_p.png" height="auto" width="120px">
+    <h4>
+      您的申请已经提交,请稍后留意系统的提示
+    </h4>
+    <a class="button" style="border:none;color:#ffffff;line-height: 80px; font-size: 18px; font-weight: 600; margin-bottom: 10px;background: #333333; height: 80px;width: 80px; border-radius: 50px;"
+       ng-click="closeModal(callBack)">
+      知道了
+    </a>
+  </div>
+</tzq-modal>

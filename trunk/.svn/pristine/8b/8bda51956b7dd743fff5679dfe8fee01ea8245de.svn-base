@@ -1,0 +1,29 @@
+<ion-view view-title="加入队员" class="app-account-news-content-systemNews-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-news-content-systemNews-body" has-header="false">
+
+    <img ng-src="img/temp/2_04.png">
+
+    <div class="text">你的好友 金小明 力邀你加入他的投知圈</div>
+
+    <ion-checkbox ng-model="my.isChecked" class="checkboxlabel">
+      阅读投知圈规则</ion-checkbox>
+
+    <a class="button app-big-button" ng-click="" ng-disabled="!my.isChecked">同意</a>
+
+    <a class="button app-big-button" ng-click="">拒绝</a>
+
+
+  </ion-content>
+
+</ion-view>

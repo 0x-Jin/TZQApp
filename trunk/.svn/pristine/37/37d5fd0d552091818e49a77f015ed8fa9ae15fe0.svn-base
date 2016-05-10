@@ -1,0 +1,49 @@
+
+<ion-view view-title="注册" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div class="clear"></div>
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2>请设置登录密码</h2>
+    </div>
+
+    <div class="list list-inset" style="margin: inherit;">
+      <label class="item item-input">
+        <i class="icon icon-unlock" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="password" placeholder="设置登录密码" ng-model="my.pwd">
+      </label>
+      <label class="item item-input">
+        <i class="icon icon-lock2" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="password" placeholder="再次确认密码" ng-model="my.repwd">
+      </label>
+      <label class="item item-input">
+        <i class="icon icon-k1" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="text" placeholder="邀请码" ng-model="my.code">
+      </label>
+    </div>
+    <div ng-show="!my.isChecked" style="color: #ff0208; font-size: 14px; text-align: left;margin-top:10px;">
+      两次密码不相符,请检查
+    </div>
+
+    <div class="clear"></div>
+    <a class="button app-big-button" ng-click="submitRegister()" ng-disabled="my.isDisabled">完成</a> <!--点击显示弹出窗口-->
+  </ion-content>
+</ion-view>
+
+<!--弹出窗口-->
+<tzq-modal modal-id="app-popup-confirm">
+  <div style="text-align: center; ">
+    <img src="img/ok_p.png" height="auto" width="120px">
+    <h4>
+      您在金明微盘的交易密码已同时升级为投知圈的交易密码。
+    </h4>
+
+    <!--关闭弹出窗口并跳转到登录页面，directives.js-->
+    <a class="button" style="border:none;color:#ffffff;line-height: 80px; font-size: 18px; font-weight: 600; margin-bottom: 10px;background: #333333; height: 80px; border-radius: 50px;" ng-click="closeModal(callBack)">知道了</a>
+
+  </div>
+
+
+</tzq-modal>
+
+
+

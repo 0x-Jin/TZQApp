@@ -1,0 +1,19 @@
+<ion-view view-title="我的圈子" class="app-team-index-posts-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-team-index-post-body" has-header="false">
+
+  </ion-content>
+
+</ion-view>
+
+

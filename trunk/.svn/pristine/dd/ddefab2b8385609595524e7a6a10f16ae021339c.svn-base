@@ -1,0 +1,16 @@
+{
+  "list":
+  [
+    { "customerName":"CHOW", "varieties":"3000克粤银", "return":"355元", "time":"2015年11月11日"}
+  ,
+    { "customerName":"CHOW", "varieties":"200公斤粤银", "return":"355元", "time":"2015年11月11日"}
+  ,
+    { "customerName":"CHOW", "varieties":"20桶粤油", "return":"355元", "time":"2015年11月11日"}
+  ,
+    { "customerName":"CHOW", "varieties":"3000克粤银", "return":"355元", "time":"2015年11月11日"}
+  ,
+    { "customerName":"CHOW", "varieties":"150克粤银", "return":"355元", "time":"2015年11月11日"}
+  ,
+    { "customerName":"CHOW", "varieties":"100公斤粤银", "return":"355元", "time":"2015年11月11日"}
+  ]
+}

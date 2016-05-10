@@ -1,0 +1,39 @@
+<ion-view view-title="添加成员" class="app-team-index-invite-view">
+
+  <ion-nav-bar class="app-common-header">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="app-team-index-invite-body">
+
+    <h3>
+      <i class="icon ion-ios-briefcase-outline"></i>&nbsp;圈名已创建
+    </h3>
+
+    <div style="font-size: 18px; line-height: 34px; margin: 0% 15%">
+      赶快邀请朋友加入你的圈子一起参加比赛赢奖品吧！
+    </div>
+
+    <button class="btn light-bg" ng-click="show()">添加成员</button>
+
+    <div id="riseBox" class="riseBox">
+
+      <div class="box" ng-click="add_weixin()">
+        <i class="icon ion-person-stalker"></i>
+        <div style="margin-top: 5%">微信好友</div>
+      </div>
+
+      <div class="box" ng-click="add_friendCycle()">
+        <i class="icon ion-happy"></i>
+        <div style="margin-top: 5%">朋友圈</div>
+      </div>
+
+      <div style="clear: both"></div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

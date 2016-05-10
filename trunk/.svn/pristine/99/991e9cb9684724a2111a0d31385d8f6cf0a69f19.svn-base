@@ -1,0 +1,29 @@
+
+<ion-view view-title="加入圈子"  class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2>输入圈子名称搜索您感兴趣的圈子</h2>
+    </div>
+
+    <label class="item item-input" style="border-radius: 5px;">
+      <input type="text" ng-model="my.keyword">
+      <i class="icon icon-search" style=" margin-right: 15px;font-size: 22px;"></i>
+    </label>
+
+    <div class="clear"></div>
+    <div ng-show="my.show">
+      <div class="list search-list">
+
+        <a class="item" ng-repeat="item in list | filter:my.keyword" ng-click="joinTeam(item)" >
+          <img width="50px" height="50px" src="{{item.img}}" >
+          <h2>{{item.teamName}}</h2>
+          <span>成员:{{item.fansNo}}</span>
+        </a>
+      </div>
+      <div class="clear"></div>
+      <div class="clear"></div>
+    </div>
+
+  </ion-content>
+</ion-view>

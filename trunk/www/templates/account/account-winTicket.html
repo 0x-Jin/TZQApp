@@ -1,0 +1,68 @@
+<ion-header-bar class="bar bar-header app-common-header" style="position: relative;">
+  <a class="button button-icon icon icon-back" ng-click="goBack()"></a>
+  <h1 class="title">赢家券</h1>
+  <a class="button button-icon icon" style="color: #2e2e2e; text-decoration: none; line-height: 35px "
+     href="#/tab/account-winTicket-recommendGift" >推荐有礼</a>
+</ion-header-bar>
+
+<div class="account-winTicket-fixed-header" >
+  <div class="row" id="account-winTicket-tab-hd">
+    <div class="col active" ng-click="switchTo(1, false)">未使用</div>
+    <div class="col" ng-click="switchTo(2, false)">已使用</div>
+    <div class="col" ng-click="switchTo(3, false)">已过期</div>
+  </div>
+</div>
+
+<ion-content class="app-account-winTicket-body" id="account-winTicket-fix-content" has-header="false">
+
+  <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" delegate-handle="accountWinTicketTab">
+
+    <!--未使用-->
+    <ion-slide>
+      <div style="height: 1px"></div>
+
+      <div ng-show="my.slideBox.box0">
+        <div style="padding: 3%;" ng-repeat="t in my.unUsed_tenList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_1.png">
+        </div>
+        <div style="padding: 3%;" ng-repeat="t in my.unUsed_twoHundredList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_2.png">
+        </div>
+      </div>
+
+    </ion-slide>
+
+    <!--已使用-->
+    <ion-slide>
+      <div style="height: 1px"></div>
+
+      <div ng-show="my.slideBox.box1">
+        <div style="padding: 3%;" ng-repeat="t in my.used_tenList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_1.png">
+        </div>
+        <div style="padding: 3%;" ng-repeat="t in my.used_twoHundredList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_2.png">
+        </div>
+      </div>
+
+    </ion-slide>
+
+    <!--已过期-->
+    <ion-slide>
+      <div style="height: 1px"></div>
+
+      <div ng-show="my.slideBox.box2">
+        <div style="padding: 3%;" ng-repeat="t in my.useless_tenList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_1.png">
+        </div>
+        <div style="padding: 3%;" ng-repeat="t in my.useless_twoHundredList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_2.png">
+        </div>
+      </div>
+
+    </ion-slide>
+
+  </ion-slide-box>
+
+</ion-content>
+

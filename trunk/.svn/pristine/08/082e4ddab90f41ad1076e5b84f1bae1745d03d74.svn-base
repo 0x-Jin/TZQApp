@@ -1,0 +1,28 @@
+{
+  "total":-234,
+  "list":
+  [
+    {
+      "id": 1,  "prdName": "粤银", "weight":"150g", "price": 10, "floatEarn": 0.15
+    }
+  ,
+    {
+      "id": 2, "prdName": "粤铜", "weight":"10公斤", "price": 10, "floatEarn": 0.01}
+  ,
+    {
+      "id": 3, "prdName": "粤油", "weight":"1桶", "price": 10, "floatEarn": 0.01
+    }
+  ,
+    {
+      "id": 4, "prdName": "粤银", "weight":"3000g", "price": 200, "floatEarn": 3
+    }
+  ,
+    {
+      "id": 5, "prdName": "粤铜", "weight":"200公斤", "price": 200, "floatEarn": 0.2
+    }
+  ,
+    {
+      "id": 6, "prdName": "粤油", "weight":"20桶", "price": 200, "floatEarn": 0.2
+    }
+  ]
+}

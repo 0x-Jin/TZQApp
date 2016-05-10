@@ -1,0 +1,56 @@
+/**
+ * service class
+ * @type {module|*}
+ */
+var tzqAppServices = angular.module('tzqApp.services', []);
+
+/**
+ *
+ */
+tzqAppServices.service('testService', function($http, $q){
+
+  /**
+   * 获取首页排行榜数据
+   * @returns {*}
+   */
+  this.getTop10 = function(){
+    return request('GET', 'testData/top10.json', {});
+  }
+
+  /**
+   * 获取总榜的排名数据
+   * @returns {*}
+   */
+  this.getRank = function(){
+    return request('GET', 'testData/rank.json', {});
+  }
+
+  /**
+   * 获取组队规则
+   * @returns {*}
+   */
+  this.getCreateTeamRule = function(){
+    return request('GET', 'testData/create_team_rule.json');
+  }
+
+  this.searchTeamListByKeyword = function(key){
+    return request('GET', 'testData/team-list.json')
+  }
+
+  this.getTeamMemberList = function(){
+    return request('GET' ,'testData/team-member-list.json')
+  }
+
+  function request(method, url, params){
+    var deferred = $q.defer();
+    $http({method: method, url:url, params:params}).
+      success(function(data, status, headers, config) {
+        deferred.resolve(data);
+      }).
+      error(function(data, status, headers, config) {
+        deferred.reject(data);
+      });
+    return deferred.promise;
+  }
+});
+

@@ -1,0 +1,17 @@
+{
+  "list":
+  [
+    {
+      "member":{ "mName": "广州满定", "income":"166", "img":"img/temp/team_img2.jpg"}
+    }
+  ,
+    {
+      "member":{ "mName": "BWO", "income":"16", "img":"img/temp/2_10.png"}
+    }
+  ,
+    {
+      "member":{ "mName": "广州tt", "income":"96", "img":"img/temp/2_07.png"}
+    }
+  ]
+}
+

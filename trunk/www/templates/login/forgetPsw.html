@@ -1,0 +1,45 @@
+<ion-view view-title="忘记密码">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">返回
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content style="padding: 10%; text-align: center">
+
+    <div style="width: 90%; margin: 15% auto; margin-bottom: 8%; font-size: 18px; line-height: 28px; font-weight: 600">
+      为了您的账户安全，请先进行身份验证已绑定手机：
+    </div>
+    <p style="font-size: 18px; line-height: 24px; font-weight: 500;">{{my.phoneNum}}</p>
+
+    <div style="margin: 10% 0%; margin-bottom: 8%">
+
+      <label class="item item-input" style="width: 60%; float: left; border-radius: 5px; padding: 0% 3%">
+        <input type="text" placeholder="输入验证码" ng-model="my.vCode">
+      </label>
+      <div style="float: left;width: 10%;height: 1px;"></div>
+
+      <button ng-click="startVcodeCountDown()"
+              class="button button-small button-outline"
+              ng-class="{'button-stable':!my.timeup, 'button-positive':my.timeup}"
+              style="width: 30%;background-color: #fff; padding: 1%"
+              ng-disabled="!my.timeup">
+        {{my.countdown}}
+      </button>
+
+      <div style="clear: both"></div>
+    </div>
+
+    <div ng-show="!my.vCodeChecked"  style="color: #ff0208; font-size: 14px; margin-bottom: 5%">
+      验证密码有误，请重新输入</div>
+
+    <a class="button app-big-button" ng-click="next()" ng-disabled="!my.isChecked" style="margin-top: 3%">下一步</a>
+
+  </ion-content>
+
+</ion-view>

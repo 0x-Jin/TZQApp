@@ -1,0 +1,56 @@
+<ion-view view-title="消息推送" class="app-account-setting-push-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-setting-push-body" has-header="false">
+
+    <div class="item item-borderless itemPadding" style="margin: 4% 0%">
+      <span>推送开关</span>
+      <label class="toggle right" style="color: #5ae368">
+        <input type="checkbox" ng-model="my.pushFlag">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </div>
+
+    <div class="item item-borderless itemPadding item_border_bottom">
+      <span>评论</span>
+      <label class="toggle right" style="color: #5ae368">
+        <input type="checkbox" ng-model="my.commentFlag">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </div>
+
+    <div class="item item-borderless itemPadding item_border_bottom">
+      <span>调仓通知</span>
+      <label class="toggle right" style="color: #5ae368">
+        <input type="checkbox" ng-model="my.transferFlag">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </div>
+    <div class="item item-borderless itemPadding">
+      <span>全员调仓通知</span>
+      <label class="toggle right" style="color: #5ae368">
+        <input type="checkbox" ng-model="my.allTransferFlag">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </div>
+
+  </ion-content>
+
+</ion-view>

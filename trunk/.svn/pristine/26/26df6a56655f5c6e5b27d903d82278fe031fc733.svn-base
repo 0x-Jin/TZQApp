@@ -1,0 +1,23 @@
+<ion-view view-title="企业认证" class="app-team-creation-view authentication-view">
+  <ion-content class="app-team-creation-body" >
+
+    <div style="width: 80%; margin: 0% auto; margin-top: 5%; font-size: 20px; line-height: 34px; color: #040528; text-align: center">
+      请验证您在金明微盘中申请的机构身份
+    </div>
+
+    <div class="list list-inset" style="margin-top: 5%; margin-bottom: 15%">
+      <label class="item item-input">
+        <i class="icon icon-lock4" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="text" placeholder="机构代码" ng-model="my.phoneNo">
+      </label>
+      <label class="item item-input">
+        <i class="icon icon-lock4" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="password" placeholder="密码" ng-model="my.pwd">
+      </label>
+    </div>
+
+    <button class="button app-big-button" ng-click="next()" ng-disabled="my.disabled">提交</button>
+
+  </ion-content>
+</ion-view>
+

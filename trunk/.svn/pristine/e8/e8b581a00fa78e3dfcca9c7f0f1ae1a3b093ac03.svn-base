@@ -1,0 +1,108 @@
+<ion-header-bar  class="bar bar-header app-index-header">
+  <a class="button button-icon icon icon-group " style="font-size: 25px;" ng-href="#/team-creation/rule" nav-direction="forward"></a>
+  <label class="item item-input app-index-input-search">
+    <input type="text" placeholder="输入战队名" ng-model="my.searchText">
+    <a class="icon icon-search placeholder-icon" href="{{my.href}}" style="text-decoration: none; color: rgba( 0,0,0,0.8); padding: 0% 3%"></a>
+  </label>
+  <a class=" button button-icon icon icon-chat" style="font-size: 25px; " href="#/tab/teamRank" ></a>
+</ion-header-bar>
+
+
+  <ion-content padding="false">
+    <ion-refresher on-refresh="doRefresh()"
+                   pulling-text="更新中..."
+                   refreshing-text="完毕"
+                   refreshing-icon="ion-loading-b">
+
+    </ion-refresher>
+
+    <!--滑动广告-->
+    <ion-slide-box class="app-index-slide" on-slide-changed="slideHasChanged($index)" auto-play="true" slide-interval="3000" does-continue="true" show-pager="true">
+      <ion-slide ng-repeat="i in [1,2,3]">
+        <a href="#" ng-click="adClick($index)"><img style="height: auto;width: 100%;" src="img/temp/slide2.png"> </a>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="card app-index-myteam" style="height: 110px;">
+      <div class="item">
+        <div class="col1">
+        <img src="img/temp/team_img2.jpg" class="team-round-img">
+        </div>
+        <div class="col2">
+        <h2>166%</h2>
+        <h1>我方铁马战队</h1>
+        <span>昨日大赚,今日继续努力 fuck you</span>
+        </div>
+        <div class="col3">
+          <h2>25</h2>
+          <span><i class="ion-android-arrow-up">  6</i></span>
+        </div>
+      </div>
+      <div class="item item-divider app-index-card-divider"></div>
+    </div>
+
+    <div class="app-card-tab-title">
+      <a class="col active" ng-click="switchTo(1, false)">领跑大V</a>
+      <a class="col" ng-click="switchTo(2, false)">人气战队</a>
+      <a class="col" ng-click="switchTo(3, false)">财富日历</a>
+    </div>
+
+    <ion-slide-box auto-play="false" show-pager="false" on-slide-changed="teamTabChange($index)" delegate-handle="teamTab">
+      <ion-slide>
+        <div class="list card app-index-myteam">
+
+          <a ng-href="#/teamIndex/index/team-index/{{team.id}}"  nav-direction="forward" class="item" ng-repeat="team in teamList">
+            <div class="col1">
+              <span ng-class="{rankno:true,color1:team.rankNo==1, color2:team.rankNo==2, color3:team.rankNo>=3}">{{team.rankNo}}</span>
+              <div ng-class="{round2:true, color11:team.rankNo==1, color21:team.rankNo==2, color31:team.rankNo>=3}">
+                <div ng-class="{round1:true, color1:team.rankNo==1, color2:team.rankNo==2, color3:team.rankNo>=3}">{{team.profitandloss}}</div>
+              </div>
+            </div>
+            <div class="col2">
+              <h2>&nbsp;</h2>
+              <h1>{{team.teamName}}<span class="v">V</span></h1>
+              <span>{{team.desc}}</span>
+            </div>
+            <div class="col3">
+              <i class="fans">粉丝  {{team.fansNo}}</i>
+              <div style="clear: both;"></div>
+              <i ng-if="!team.isSub" class="ion ion-ios-plus-outline add" ng-click="addSub($event)">&nbsp;&nbsp;&nbsp;关注</i>
+            </div>
+          </a> <!-- nav-direction="forward"-->
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="list card app-index-myteam">
+
+          <a ng-href="#/teamIndex/index/team-index/{{team.id}}"  class="item" ng-repeat="team in teamList" >
+            <div class="col1">
+              <span ng-class="{rankno:true,colorv1:team.rankNo==1, colorv2:team.rankNo==2, colorv3:team.rankNo>=3}">{{team.rankNo}}</span>
+              <div ng-class="{round2:true, colorv11:team.rankNo==1, colorv21:team.rankNo==2, colorv31:team.rankNo>=3}">
+                <div ng-class="{round1:true, colorv1:team.rankNo==1, colorv2:team.rankNo==2, colorv3:team.rankNo>=3}">{{team.profitandloss}}</div>
+              </div>
+            </div>
+            <div class="col2">
+              <h2>&nbsp;</h2>
+              <h1>{{team.teamName}}</h1>
+              <span>{{team.desc}}</span>
+            </div>
+            <div class="col3">
+              <i class="fans">粉丝  {{team.fansNo}}</i>
+              <div style="clear: both;"></div>
+              <i ng-if="!team.isSub" class="ion ion-ios-plus-outline add" ng-click="addSub()">&nbsp;&nbsp;&nbsp;关注</i>
+            </div>
+          </a>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <span>这是财富日历的界面</span>
+
+      </ion-slide>
+    </ion-slide-box>
+
+
+  </ion-content>
+
+

@@ -1,0 +1,38 @@
+<ion-view view-title="输入密码">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+      <a style="color: #2e2e2e; text-decoration: none; line-height: 35px" href="#/login/forgetPsw/{{my.id}}"  nav-direction="forward">
+        忘记密码</a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content padding="true">
+
+    <div class="list list-inset" style="margin: inherit; margin-top: 20%; text-align: center;">
+      <h3 style="font-size: 22px; font-weight: 600;">输入{{my.LoginPswOrTradePsw}}</h3>
+
+      <div class="clear"></div>
+      <label class="item item-input" style="margin:5% 12% ">
+        <input type="password" ng-model="my.pwd" style="font-size: 20px;">
+      </label>
+
+      <div class="clear"></div>
+      <p ng-if="!my.passed"
+         style="margin:0 12% ;font-size: 16px; font-weight: 600; background-color: #f26851; color: #fff; height: 50px;line-height: 50px; border-radius: 5px;"
+         ng-class="{'an-shining':!my.passed}">
+        密码错误
+      </p>
+    </div>
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,55 @@
+<div class="team-index-tab-member-body">
+
+  <!--群主-->
+  <div class="row host">
+
+    <div class="col col-25">
+        <img ng-src="img/temp/team_img2.jpg" class="team-round-img" style="width: 60px; height: 60px;">
+    </div>
+    <div class="col col-25">
+      <h4><strong> 群主 </strong></h4>
+      <h4> 老马 </h4>
+    </div>
+    <div class="col col-20" ></div>
+    <div class="col col-30" >
+      <br/><br/>
+      <div class="nick-name">将军</div>
+    </div>
+
+  </div>
+
+  <div class="row" style="background-color: #ffffff; padding: 10px">
+    <div class="col col-35">组员</div>
+    <div class="col col-30"></div>
+    <div class="col col-30" style="text-align: left" >
+      <div class="nick-name">10人</div>
+    </div>
+  </div>
+
+  <!--成员-->
+  <ion-list  show-delete="shouldShowDelete">
+
+    <ion-item class="team-index-tab-member-listItem" ng-repeat="member in list" >
+
+      <div class="row">
+        <div class="col col-25">
+           <img ng-src="{{member.img}}" class="team-round-img" style="width: 40px;height: 40px;">
+        </div>
+        <div class="col col-30">
+          <br/>
+          <h3>{{member.mName}}</h3>
+        </div>
+        <div class="col col-15" ></div>
+        <div class="col col-30" >
+          <br/>
+          <div class="nick-name">{{member.nickName}}</div>
+        </div>
+      </div>
+
+      <ion-option-button class="button deleteMemberBtn" ng-click="showConfirm( member )">踢出本组</ion-option-button>
+
+    </ion-item>
+  </ion-list>
+
+</div>
+

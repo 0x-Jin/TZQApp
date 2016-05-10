@@ -1,0 +1,58 @@
+@-webkit-keyframes "shining" {
+  from{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+.an-shining{
+  -webkit-animation-name:'shining';
+  -webkit-animation-duration: .3s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count:3;
+  -webkit-animation-direction: alternate;
+}
+
+/*上升*/
+@-webkit-keyframes "rise" {
+  0%{
+    left:0px; top: 600px;
+  }
+  100%{
+    left:0px; top: 160px;
+  }
+}
+
+.an-rise{
+  -webkit-animation-name:'rise';
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-direction: alternate;
+}
+
+
+/*下降*/
+@-webkit-keyframes "drop" {
+  0%{
+    left:0px; top: 160px;
+  }
+  100%{
+    left:0px; top: 600px;
+  }
+}
+
+.an-drop{
+  -webkit-animation-name:'drop';
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-direction: alternate;
+}
+

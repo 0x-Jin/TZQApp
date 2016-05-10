@@ -1,0 +1,64 @@
+<ion-view view-title="我的收入" class="app-account-brokers-income-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-brokers-income-body" has-header="false" >
+
+    <div class="chooseTime">
+      <ul>
+        <li>日期</li>&nbsp;&nbsp;
+        <li class="dateBox">2015-11-7</li>
+        <li>至</li>
+        <li class="dateBox">2015-12-7</li>
+      </ul>
+    </div>
+
+    <!--数据-->
+    <div class="data">
+
+      <div class="sumIncome">
+        总收入：<span style="color: #fd5151;  font-weight: 500;">321.2</span>
+      </div>
+
+      <div id="fixedBox" class="fixedBox">
+        <div class="title">客户</div>
+        <div ng-repeat="d in list">
+          <div class="content" style="border-right: 1px solid rgba( 0,0,0,0.08); text-align: center">{{d.customerName}}</div>
+        </div>
+      </div>
+
+      <ion-scroll direction="x" >
+        <div id="slideBox" class="slideBox">
+
+          <div class="row title">
+            <div class="col col-30">品种</div>
+            <div class="col col-30">返回佣金</div>
+            <div class="col col-40" style="border-right: none">时间</div>
+          </div>
+
+          <div ng-repeat="d in list">
+            <div class="row content">
+              <div class="col col-30">{{d.varieties}}</div>
+              <div class="col col-30">{{d.return}}</div>
+              <div class="col col-40">{{d.time}}</div>
+            </div>
+          </div>
+
+        </div>
+      </ion-scroll>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+

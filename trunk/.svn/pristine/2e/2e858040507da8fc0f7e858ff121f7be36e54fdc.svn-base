@@ -1,0 +1,21 @@
+<ion-view view-title="加入投知圈" class="app-team-searchResult-view">
+
+  <ion-content class="app-team-searchResult-body" has-header="false">
+
+    <div class="box">
+      <img ng-src="img/temp/team_img2.jpg">
+      <div>{{my.cycleName}}</div>
+
+      <div ng-show="1">已加入：3人</div>
+      <div ng-show="0" style="color: red">已满人</div>
+
+      <div>队长：Rachel</div>
+    </div>
+
+    <a class="button app-big-button" ng-show="1" href="#/team-creation/joinRequest">确认</a>
+    <a class="button app-big-button" ng-show="0" ng-click="goBack()">重新搜索</a>
+
+
+  </ion-content>
+
+</ion-view>

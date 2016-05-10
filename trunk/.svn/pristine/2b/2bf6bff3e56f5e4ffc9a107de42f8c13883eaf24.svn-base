@@ -1,0 +1,73 @@
+<ion-view view-title="<strong>经纪人</strong>" class="light app-account-brokers-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-account-brokers-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back light" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-brokers-body" has-header="false">
+
+    <div class="header" style="background-color: #fece18">
+
+      <a style="text-decoration: none" href="#/tab/account-brokers-income">
+        <div style="position: relative;  text-align: center;">
+          <div class="myIncomeText">我的收入</div>
+          <div class="myIncome"> 3432<span style="font-size: 25px"> ￥</span> </div>
+        </div>
+      </a>
+
+
+      <div class="row">
+        <a class="col" style="border-right: 1px solid rgba(255,255,255,0.3)" href="#/tab/account-brokers-customer">
+          直属客户
+          <div class="num">32人</div>
+        </a>
+        <a class="col" style="border-right: 1px solid rgba(255,255,255,0.3)"  href="#/tab/account-brokers-close">
+          直属平仓
+          <div class="num">12笔</div>
+        </a>
+        <a class="col" href="#/tab/account-brokers-position">
+          直属持仓
+          <div class="num">22笔</div>
+        </a>
+      </div>
+
+    </div>
+
+    <a class="item item-borderless QR_code" ng-click="showCode()">
+      <div class="myImg">
+        <img ng-src="img/temp/team_img1.jpg">
+      </div>
+      <div class="text">我的名片</div>
+      <div class="myCode">
+        <img ng-src="img/temp/QR_code.jpg">
+      </div>
+    </a>
+
+  </ion-content>
+</ion-view>
+
+
+<pop-modal modal-id="app-popup-code">
+
+  <div style="text-align: center; padding: 7% 13%;">
+
+    <img ng-src="img/temp/team_img1.jpg" style="width: 60px; height: 60px; border-radius: 60px">
+
+    <div style="font-size: 20px; margin-top: 2%">Rachel</div>
+    <div style="font-size: 20px; margin-top: 2%">15625000000</div>
+
+    <img ng-src="img/temp/QR_code.jpg" style="width:75%; margin-top: 20%; margin-bottom: 15%">
+
+  </div>
+
+  <div ng-click="closeModal()" style="width: 30px; height: 30px; border-radius: 30px; background-color: #ffffff; position: absolute; top: -12px; right: -12px">
+    <i class="icon ion-ios-close-outline" style="font-size: 23px; font-weight: bold; line-height: 30px; margin-left: 20%"></i>
+  </div>
+
+</pop-modal>

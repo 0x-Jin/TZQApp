@@ -1,0 +1,29 @@
+
+<ion-view view-title="登录" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div class="clear"></div>
+
+
+    <div class="list list-inset" style="margin: inherit;">
+      <label class="item item-input">
+        <i class="icon icon-person2" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="text" placeholder="请输入手机号码" ng-model="my.phoneNo">
+      </label>
+      <label class="item item-input">
+        <i class="icon icon-lock4" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="password" placeholder="请输入登录密码" ng-model="my.pwd">
+      </label>
+    </div>
+    <div ng-show="!my.isChecked" style="color: #ff0208; font-size: 14px; text-align: left;margin-top:10px;">
+      {{my.errorMsg}}
+    </div>
+
+    <div class="clear"></div>
+    <a class="button app-big-button" ng-click="login()">登录</a>
+  </ion-content>
+</ion-view>
+
+
+
+
+

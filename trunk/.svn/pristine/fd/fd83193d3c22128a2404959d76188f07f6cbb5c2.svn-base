@@ -1,0 +1,19 @@
+
+<ion-view view-title="创建成功" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h3><i style="margin-right: 20px;"><img src="img/ok.png" width="30px" height="auto"></i>您的投知圈已创建</h3>
+      <span>
+        赶快邀请朋友加入您的群组一起参加比赛赢奖品吧!
+      </span>
+    </div>
+
+    <button class="button button-block icon-left btn-white icon-wechat " style="color: #5ac64f;" ng-click="next(1)">
+      <span style="color: #040528">邀请微信好友</span>
+    </button>
+    <div class="clear"></div>
+    <button class="button button-block icon-left btn-white icon-qq " style="color: #5ca3e1;" ng-click="next(1)">
+      <span style="color: #040528">邀请QQ好友</span>
+    </button>
+  </ion-content>
+</ion-view>

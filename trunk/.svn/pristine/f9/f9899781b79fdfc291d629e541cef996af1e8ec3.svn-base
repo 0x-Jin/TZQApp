@@ -1,0 +1,5 @@
+dependencies: \
+  /Users/apple/Documents/workspace_cordova/TZQApp/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m \
+  /Users/apple/Documents/workspace_cordova/TZQApp/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.h \
+  /Users/apple/Documents/workspace_cordova/TZQApp/platforms/ios/CordovaLib/Classes/CDVAvailability.h \
+  /Users/apple/Documents/workspace_cordova/TZQApp/platforms/ios/CordovaLib/Classes/CDVAvailabilityDeprecated.h

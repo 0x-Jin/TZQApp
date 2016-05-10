@@ -1,0 +1,60 @@
+<ion-view view-title="登录" class="app-team-creation-view">
+
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="right">
+      <a style="color: #2e2e2e; text-decoration: none; line-height: 35px" href="#/login/forgetPsw/0"> <!--登录密码id是0-->
+        忘记密码</a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-team-creation-body" >
+
+    <div class="list list-inset" style="margin: inherit; margin-top: 25%; margin-bottom: 15%">
+      <label class="item item-input">
+        <i class="icon icon-person2" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="text" placeholder="请输入手机号码" ng-model="my.phoneNo">
+      </label>
+      <label class="item item-input">
+        <i class="icon icon-lock4" style="font-size: 22px; margin-right: 5px;"></i>
+        <input type="password" placeholder="请输入登录密码" ng-model="my.pwd">
+      </label>
+    </div>
+    <div ng-show="!my.isChecked" style="color: #ff0208; font-size: 14px; text-align: left;margin-top:10px;">
+      {{my.errorMsg}}
+    </div>
+
+    <div class="row">
+      <div class="col" style="padding-right: 5%">
+        <a class="button app-big-button"  ng-click="login()">登录</a>
+      </div>
+      <div class="col" style="padding-left: 5%">
+        <a class="button app-big-button" href="#/register/phone-no">注册</a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+
+
+<pop-modal modal-id="app-popup-registerGift">
+
+  <div style="background-color: #f4cf43; text-align: center; padding: 7% 13%;">
+
+    <div style="margin-top: 30%">
+      <img ng-src="img/temp/registerGift.png" style="width: 100%; height: auto;">
+    </div>
+
+    <div style="color: #ffffff; font-size: 20px; line-height: 24px;  margin-top: 2%; margin-bottom: 30%">获得10元赢家券1张</div>
+
+  </div>
+
+
+  <a class="btn" style="width: 100%; font-size: 20px; text-decoration: none; color: #000; background-color: #fbab00"
+     ng-click="receiveRegisterGift()">立即领取</a>
+
+</pop-modal>
+
+
+

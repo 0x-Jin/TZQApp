@@ -1,0 +1,19 @@
+<ion-view view-title="验证" class="app-team-joinRequest-view">
+
+
+    <ion-nav-buttons side="right">
+      <a style="color: #2e2e2e; text-decoration: none; line-height: 35px" ng-click="joinRequest()" >
+        申请加入</a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-team-joinRequest-body" has-header="false">
+
+    <div style="margin: 10% auto; font-size: 20px">请输入验证信息</div>
+
+    <textarea id="requestText" placeholder="我是…"></textarea>
+
+  </ion-content>
+
+</ion-view>

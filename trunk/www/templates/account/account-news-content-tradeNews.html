@@ -1,0 +1,98 @@
+<ion-view view-title="交易消息" class="app-account-news-content-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-news-content-body" has-header="false">
+
+    <div class="clear"></div>
+
+    <div class="newsBox" ng-repeat="d in newsContentList" ng-click="showDetail( d.id )">
+
+      <div style="width: 17%; float: left;">
+        <img ng-src={{d.headImg}}>
+      </div>
+
+      <div class="news">
+
+        <div class="newsContent">
+
+          <!--交易消息-->
+          <div style="font-size: 15px; line-height: 22px; padding-top: 3%; padding-bottom: 10%">
+            您有一笔交易已平仓
+            <div class="clear"></div>
+            <div>订单号：{{d.orderNum}}</div>
+            <div>平仓时间：{{d.closeTime}}</div>
+            <div>平仓价位：{{d.closePrice}}</div>
+            <div>平仓类型：{{d.closeType}}</div>
+            <div>盈亏资金：{{d.profitAmount}}</div>
+            <div>本单盈余：{{d.surplus}}</div>
+          </div>
+
+        </div>
+
+        <div style="padding: 5% 7%; font-size: 12px; color: rgba( 0,0,0,0.7 )">
+          <span>查看详情</span>
+          <i class="icon ion-ios-arrow-right" style="float: right"></i>
+        </div>
+
+      </div>
+
+      <div style="clear: both"></div>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+<pop-modal modal-id="app-popup-showTrade">
+
+  <div style="padding: 5% 6%; margin: 0px; font-size: 16px; line-height: 26px">
+
+    <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+      <div>订单号：{{my.popData.orderNum}}</div>
+      <div style="float: left">建仓时间：</div>
+      <div style="float: left">
+        {{my.popData.buildDate}}<br/>
+        {{my.popData.bulidTime}}
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+      <div>产品：{{my.popData.weight}}{{my.popData.prdDesc}}</div>
+      <div>方向：{{my.popData.orderType==1?'多':'空'}}</div>
+      <div>入仓价：39999</div>
+      <div>平仓价：39999</div>
+    </div>
+
+    <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+      <div>入仓支付金额：{{my.popData.price}}*{{my.popData.quantity}}</div>
+      <div>入仓手续费：{{my.popData.brokerage}}</div>
+      <div>盈亏金额：2.94</div>
+    </div>
+
+    <div style="padding: 4%">
+      <div>平仓收入金额：12.94</div>
+      <div>本单实际盈亏：2.04元</div>
+    </div>
+
+  </div>
+
+  <a class="btn positive-bg" style="width: 100%; font-size: 20px; text-decoration: none; color: #000" ng-click="sendWinTicket()" > 送赢家券</a>
+
+  <!--右上角关闭按钮-->
+  <div ng-click="closeBtn()" style="width: 30px; height: 30px; border-radius: 30px; background-color: #ffffff; position: absolute; top: -12px; right: -12px" >
+    <i class="icon ion-ios-close-outline" style="font-size: 23px; font-weight: bold; line-height: 30px; margin-left: 20%"></i>
+  </div>
+
+</pop-modal>
+

@@ -1,0 +1,29 @@
+<ion-view view-title="推荐有礼" class="app-account-winTicket-recommendGift-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()"></a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-winTicket-recommendGift-body" has-header="false">
+
+    <div style="margin: 10% auto">
+
+      <div class="text">每邀请一位好友加入投知圈，你和被邀请的好友都将获得10元赢家券一张。</div>
+
+      <div class="text">邀请人数不限，次数不限，越多好友加入，你获得的赢家券就越多！</div>
+
+      <div class="numBox">27dggi4y</div>
+
+      <a class="btn positive-bg">邀请好友获得赢家券</a>
+
+    </div>
+
+
+  </ion-content>
+
+</ion-view>

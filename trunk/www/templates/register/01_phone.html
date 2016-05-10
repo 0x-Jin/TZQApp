@@ -1,0 +1,19 @@
+
+<ion-view view-title="注册" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div class="clear"></div>
+
+    <label class="item item-input">
+      <i class="icon icon-pad" style="font-size: 30px;"></i>
+      <input type="text" ng-model="my.teamName" placeholder="请输入您的手机号码...">
+    </label>
+
+    <div class="clear"></div>
+    <ion-checkbox ng-model="my.isChecked" class="checkboxlabel">我已阅读<a href="#"><<服务协议>></a>,并同意服务内容</ion-checkbox>
+
+    <a class="button app-big-button" ng-click="next('/register/phone-no-validate')" ng-disabled="my.isDisabled">下一步</a>
+
+  </ion-content>
+</ion-view>

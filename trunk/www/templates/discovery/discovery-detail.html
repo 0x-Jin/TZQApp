@@ -1,0 +1,27 @@
+<ion-view view-title="资讯" class="app-discovery-detail-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content padding="true" class="app-discovery-detail-body" has-header="false">
+
+    <h1 class="title">{{my.discoveryDetail.title}}</h1>
+    <h2 class="date">{{my.discoveryDetail.date}}</h2>
+
+    <div ng-show="my.discoveryDetail.img">
+      <img style="width: 100%" ng-src="{{my.discoveryDetail.img}}">
+
+    </div>
+
+    <div class="content">{{my.discoveryDetail.msg}}</div>
+
+  </ion-content>
+
+</ion-view>

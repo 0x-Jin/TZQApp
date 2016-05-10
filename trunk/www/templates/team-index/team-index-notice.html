@@ -1,0 +1,23 @@
+<ion-view view-title="圈内公告" class="app-team-index-notice-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+      <a id="submitBtn" class="button button-small" style="background-color: #f4e39e; border: none; padding: 0px 10px; font-size: 15px;">
+        <span>保存</span>
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-team-index-notice-body" has-header="false">
+    <textarea id="postsText" placeholder="想对组员说…"></textarea>
+  </ion-content>
+
+</ion-view>

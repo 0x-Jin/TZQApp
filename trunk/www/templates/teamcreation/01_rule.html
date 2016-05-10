@@ -1,0 +1,22 @@
+<ion-view view-title="创建投知圈" class="app-team-creation-view">
+
+
+  <ion-content class="app-team-creation-body" has-header="false">
+    <div class="ruleText">
+      <br>
+      1.加入战队后，个人一旦发生交易，则当天的盈亏立即算入战队成绩。
+      <br>
+      <br>
+      2.加入战队表示您同意将个人的交易记录与其他成员共享（包括但不仅限于交易品种、手数、入仓价、平仓价、交易时间、单笔盈亏等等） 。
+      <br>
+      <br>
+      3.每人每次只能组建/加入一个战队；发送交易后，退出需队长验证通过。
+      <br>
+      <br>
+      4.队长一旦退出战队，则由军衔最高者顶替。
+      <br> <br>
+    </div>
+    <ion-checkbox ng-model="my.isChecked" class="checkboxlabel">我已理解组队规则</ion-checkbox>
+    <a class="button app-big-button" ng-click="next()" ng-disabled="!my.isChecked">下一步</a>
+  </ion-content>
+</ion-view>

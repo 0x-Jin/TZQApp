@@ -1,0 +1,364 @@
+<ion-header-bar id="trade-index-header" class="bar bar-header app-index-header" style="position: relative;">
+  <h1 class="title">微盘交易</h1>
+</ion-header-bar>
+
+  <!--粤银、粤铜、粤油 三个标签，总盈亏-->
+  <div class="trade-index-fixed-header" >
+
+    <div class="card app-trade-index" style="height: 65px;">
+      <div class="price-col raise down" id="tab1" ng-click="chooseTab(1)">
+        <div>粤银报价</div>
+        <div style="margin-top: 5px;">
+          <i class="icon ion-arrow-down-c"></i>
+          1236
+        </div>
+      </div>
+      <div class="price-col raise" id="tab2" ng-click="chooseTab(2)">
+        <div>粤铜报价</div>
+        <div style="margin-top: 5px;">
+          <i class="icon ion-arrow-up-c"></i>
+          3436
+        </div>
+      </div>
+      <div class="price-col raise" id="tab3" ng-click="chooseTab(3)">
+        <div>粤油报价</div>
+        <div style="margin-top: 5px;">
+          <i class="icon ion-arrow-up-c"></i>
+          6236
+        </div>
+      </div>
+    </div>
+
+    <div class="app-divider"></div>
+
+    <!--总盈亏-->
+    <div class="card app-trade-index" style="border-top: 1px solid rgba(112,112,112,0.3);border-bottom: 1px solid rgba(112,112,112,0.3);">
+      <div class="trade-summary" ng-click="toggle()">
+
+        <span class="t1">总盈亏:</span>
+      <span class="t1" ng-class="{up:orderSummary.total>=0, loss:orderSummary.total<0}">
+        <span ng-if="orderSummary.total>0">+</span>{{orderSummary.total}}
+      </span>
+
+        <a class="icon ion-chevron-up" ng-class="{'ion-ios-arrow-down':my.toggle,'ion-ios-arrow-up':!my.toggle}"
+           style="float: right;width: 30px; text-align: center;" ></a>
+
+      </div>
+    </div>
+
+    <!--总盈亏下拉-->
+    <div class="card app-trade-index" style="box-shadow: 2px 5px 2px rgba(112,112,112, 0.5);">
+
+      <div id="list-con" style=" display: none;max-height: 250px;overflow: auto;">
+        <div class="row" ng-repeat="order in orderSummary.list" >
+
+          <div class="col col-17" ng-class="{up:order.amount>=0, loss:order.amount<0}" style="text-align: left;">
+            <span ng-if="order.amount>=0">+</span>{{order.amount}}
+          </div>
+          <div class="col col-13">{{order.prdDesc}}</div>
+          <div class="col col-20">{{order.weight}}</div>
+          <div class="col col-15">{{order.quantity}}手</div>
+          <div class="col col-7">{{order.orderType==1?'多':'空'}}</div>
+          <div class="col">
+            <button style="font-size: 14px;line-height:inherit;min-height: inherit;padding: 1px;;" class="button button-outline button-positive"
+                    ng-click="closeComfirm(order)">
+              平仓
+            </button>
+          </div>
+          <div class="col col-10" ng-click="showDetail(order)">
+            <i class="icon ion-eye" style="font-size: 20px"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--弹出窗口-->
+  <pop-modal modal-id="app-popup-show">
+
+    <!--交易有礼、详细信息-->
+    <div ng-show="my.popUpPage">
+
+      <!--交易有礼 -1 -->
+      <div ng-show="!(my.popUpPage+1)">
+
+        <div style="background-color: #f4cf43; text-align: center; padding: 7% 13%;">
+
+          <div style="margin-top: 30%">
+            <img ng-src="img/temp/registerGift.png" style="width: 100%; height: auto;">
+          </div>
+
+          <div style="color: #ffffff; font-size: 20px; line-height: 24px;  margin-top: 2%; margin-bottom: 30%; text-align: center">
+            交易满20手200元单获得200元赢家券1张
+          </div>
+
+        </div>
+
+        <a class="btn" style="width: 100%; font-size: 20px; text-decoration: none; color: #000; background-color: #fbab00"
+           ng-click="receiveGift()">立即领取</a>
+
+      </div>
+
+      <!--详细信息 1、2-->
+      <div ng-show="(my.popUpPage+1)">
+
+        <!--未平仓详细信息，my.popUpPage == 1 -->
+        <div ng-show="!(my.popUpPage-1)">
+
+          <div style="padding: 10% 6%; margin: 0px; font-size: 16px; line-height: 26px">
+
+            <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+              <div>订单号：{{my.popData.orderNum}}</div>
+              <div style="float: left">建仓时间：</div>
+              <div style="float: left">
+                {{my.popData.buildDate}}<br/>
+                {{my.popData.bulidTime}}
+              </div>
+              <div style="clear: both"></div>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+              <div>产品：{{my.popData.weight}}{{my.popData.prdDesc}}</div>
+              <div>方向：{{my.popData.orderType==1?'多':'空'}}</div>
+              <div>入仓价：39999</div>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+              <div>入仓支付金额：{{my.popData.price}}*{{my.popData.quantity}}</div>
+              <div>入仓手续费：{{my.popData.brokerage}}</div>
+            </div>
+
+            <div style="padding: 4%">
+              <div>止盈：不设</div>
+              <div>止损：20%</div>
+            </div>
+
+            <button style="position: fixed; right: 8%; bottom: 21%; background-color: #ffb248; padding: 1% 2%; border: none; border-radius: 3px">
+              <span style="color: #ffffff; font-size: 13px" ng-click="profitSetting(my.popData)">修改设置</span>
+            </button>
+
+          </div>
+
+          <button class="btn positive-bg" style="width: 100%; font-size: 20px" ng-click="close(my.popData)"> 平仓</button>
+
+        </div>
+
+        <!--已平仓详细信息，my.popUpPage == 2 -->
+        <div ng-show="(my.popUpPage-1)">
+
+          <div style="padding: 5% 6%; margin: 0px; font-size: 16px; line-height: 26px">
+
+            <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+              <div>订单号：{{my.popData.orderNum}}</div>
+              <div style="float: left">建仓时间：</div>
+              <div style="float: left">
+                {{my.popData.buildDate}}<br/>
+                {{my.popData.bulidTime}}
+              </div>
+              <div style="clear: both"></div>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+              <div>产品：{{my.popData.weight}}{{my.popData.prdDesc}}</div>
+              <div>方向：{{my.popData.orderType==1?'多':'空'}}</div>
+              <div>入仓价：39999</div>
+              <div>平仓价：39999</div>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba( 0,0,0,0.08 ); padding: 4%">
+              <div>入仓支付金额：{{my.popData.price}}*{{my.popData.quantity}}</div>
+              <div>入仓手续费：{{my.popData.brokerage}}</div>
+              <div>盈亏金额：2.94</div>
+            </div>
+
+            <div style="padding: 4%">
+              <div>平仓收入金额：12.94</div>
+              <div>本单实际盈亏：2.04元</div>
+            </div>
+
+          </div>
+
+          <a class="btn positive-bg" style="width: 100%; font-size: 20px; text-decoration: none; color: #000" ng-click="sendWinTicket()" > 送赢家券</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--盈亏设置 0-->
+    <div ng-show="!my.popUpPage">
+
+      <div style="padding: 10%; margin: 0px; text-align: center">
+
+        <div style="font-size: 22px; font-weight: bold">交易完成</div>
+
+        <div style="margin-top: 15%; margin-bottom: 20%; font-size: 17px; font-weight: bold">盈亏设置（10%~50%)</div>
+
+        <div class="row">
+          <div class="col col-25">止盈</div>
+          <div class="col col-20">
+            <div style="padding: 5%; border: 1px solid rgba( 0,0,0, 0.2 ); border-radius: 2px">-</div>
+          </div>
+          <div class="col col-30">
+            <div style="padding: 5%; border: 1px solid rgba( 0,0,0, 0.2 );  border-radius: 2px">不设</div>
+          </div>
+          <div class="col col-20">
+            <div style="padding: 5%; border: 1px solid rgba( 0,0,0, 0.2 ); border-radius: 2px">+</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-25">止盈</div>
+          <div class="col col-20">
+            <div style="padding: 5%; border: 1px solid rgba( 0,0,0, 0.2 ); border-radius: 2px">-</div>
+          </div>
+          <div class="col col-30">
+            <div style="padding: 5%; border: 1px solid rgba( 0,0,0, 0.2 ); border-radius: 2px">20%</div>
+          </div>
+          <div class="col col-20">
+            <div style="padding: 5%; border: 1px solid rgba( 0,0,0, 0.2 ); border-radius: 2px">+</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 35%">
+          <button class="btn positive-bg" style="padding: 1% 20%; font-size: 20px" ng-click="profitSettingSave()">保存</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--右上角关闭按钮-->
+    <div ng-click="closeBtn()" ng-show="(my.popUpPage+1)" style="width: 30px; height: 30px; border-radius: 30px; background-color: #ffffff; position: absolute; top: -12px; right: -12px" >
+      <i class="icon ion-ios-close-outline" style="font-size: 23px; font-weight: bold; line-height: 30px; margin-left: 20%"></i>
+    </div>
+
+  </pop-modal>
+
+
+  <ion-content padding="false" id="trade-index-fix-content" ng-click="toggleClose()">
+
+    <div class="card app-trade-index" style="height: 60px; border-top: 1px solid rgba(112,112,112,0.3);border-bottom: 1px solid rgba(112,112,112,0.3);">
+      <div class="price-normal" style="line-height: 60px;padding-top: 0px;">
+        <div style="font-size: 18px;">{{my.product}}</div>
+      </div>
+      <div class="price-normal">
+        <div>最高: 3043</div>
+        <div>最低: 2043</div>
+      </div>
+      <div class="price-normal">
+        <div>昨收: 3043</div>
+        <div>今开: 2043</div>
+      </div>
+    </div>
+
+    <div class="app-divider"></div>
+    <div class="card app-trade-index" style="height: 280px;border-top: 1px solid rgba(112,112,112,0.3);border-bottom: 1px solid rgba(112,112,112,0.3);">
+      <div class="btn-bar">
+        <a ng-class="{'t-btn':true, 'cu-range':my.p0}" ng-click="range(0)">分时线</a>
+        <a ng-class="{'t-btn':true, 'cu-range':my.p5}" ng-click="range(5)">5分钟</a>
+        <a ng-class="{'t-btn':true, 'cu-range':my.p15}" ng-click="range(15)">15分钟</a>
+        <a ng-class="{'t-btn':true, 'cu-range':my.p30}" ng-click="range(30)">30分钟</a>
+        <a ng-class="{'t-btn':true, 'cu-range':my.p60}" ng-click="range(60)">1小时</a>
+      </div>
+      <div class="chart-con" id="app-trade-index-chart"></div>
+    </div>
+
+    <!--pyb add-->
+    <div ng-repeat="prd in prdList" style="margin-top: 2%">
+      <div class="prdBox">
+
+        <button class="upBtn" id={{"up"+prd.id}} ng-click="buy(0, prd.id)" ng-disabled="my.buttonDisabled.btn{{prd.id}}">买涨</button>
+
+        <div class="dataBox">
+
+          <div class="row">
+            <div class="col name">{{prd.prdName}}</div>
+            <div class="col weight">{{prd.weight}}</div>
+          </div>
+
+          <div class="price">{{prd.price}}<span>元/手</span></div>
+          <div class="floatEarn">浮动盈亏:{{prd.floatEarn}}元</div>
+
+        </div>
+
+        <button class="downBtn" id={{"down"+prd.id}} ng-click="buy(1, prd.id)"  ng-disabled="my.buttonDisabled.btn{{prd.id}}">买跌</button>
+
+      </div>
+    </div>
+    </div>
+
+    <div style="clear: both"></div>
+
+  </ion-content>
+
+  <!--建仓div-->
+  <div id="buildBox" class="buildBox" ng-click="toggleClose()"
+       ng-class="{ 'an-rise' : my.buildRiseFlag , 'an-drop' : my.buildDropFlag }">
+
+    <div class="infoBox">
+      <div>{{my.buildData.prdName}}：{{my.buildData.weight}}（{{my.buildData.price}}元/手）</div>
+      <div>方向：空</div>
+      <div>价格：2996</div>
+    </div>
+
+    <div class="amountBox">
+      <div style="margin-bottom: 3%">手数</div>
+
+      <!--选择手数-->
+      <div id="amountRadio">
+
+        <div class="row row1_5">
+          <div id="option1" class="col selected_bg" ng-click="selectAmount(1)" style=" border-left: 1px solid rgba(0,0,0,0.3);">1</div>
+          <div id="option2" class="col unselected_bg" ng-click="selectAmount(2)">2</div>
+          <div id="option3" class="col unselected_bg" ng-click="selectAmount(3)">3</div>
+          <div id="option4" class="col unselected_bg" ng-click="selectAmount(4)">4</div>
+          <div id="option5" class="col unselected_bg" ng-click="selectAmount(5)">5</div>
+        </div>
+
+        <div class="row row6_10">
+          <div id="option6" class="col unselected_bg" ng-click="selectAmount(6)" style=" border-left: 1px solid rgba(0,0,0,0.3);">6</div>
+          <div id="option7" class="col unselected_bg" ng-click="selectAmount(7)">7</div>
+          <div id="option8" class="col unselected_bg" ng-click="selectAmount(8)">8</div>
+          <div id="option9" class="col unselected_bg" ng-click="selectAmount(9)">9</div>
+          <div id="option10" class="col unselected_bg" ng-click="selectAmount(10)">10</div>
+        </div>
+
+      </div>
+
+      <div class="row" style="margin-top: 1%;">
+        <div class="col" style="text-align: left; font-size: 20px">
+          10<span style="font-size: 15px; margin-top: 5px; margin-left: 2px">元</span>
+        </div>
+        <div class="col" style="text-align: right; font-size: 15px;margin-top: 5px">手续费：0.9元</div>
+      </div>
+
+      <div style="padding: 0px; margin: 0px; margin-top: 3%; font-size: 14px;">
+        <ion-checkbox class="checkboxlabel">使用赢家券</ion-checkbox>
+      </div>
+
+    </div>
+
+    <div style="text-align: center;  position: relative;">
+
+      <div style="font-size: 35px; margin: 6% auto; height: 30%">
+        10.9<span style="font-size: 20px">元</span>
+      </div>
+
+      <button class="btn positive-bg" style="padding: 2% 10%; box-shadow: 0px -1px 1px rgba( 0,0,0,0.3);"
+              ng-click="buildConfirm( my.buildData.id )">确认建仓</button>
+
+      <div style="margin-top: 5%; height: 20%">若凌晨4:00前无操作，该订单将会被强行平仓</div>
+
+    </div>
+
+    <div style="position: absolute; right: 5%; top: 1%" ng-click="buildCancel()">
+      <i class="icon ion-ios-close-outline" style="font-size: 23px; font-weight: bold; line-height: 30px; margin-left: 20%"></i>
+    </div>
+
+  </div>
+
+

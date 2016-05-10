@@ -1,0 +1,21 @@
+<ion-view view-title="加入投知圈" class="app-team-search-view">
+
+
+  <ion-content class="app-team-search-body" has-header="false">
+
+    <h3>请输入你要加入的圈子</h3>
+
+    <label class="item item-input app-team-search">
+      <input type="text" ng-model="my.searchText">
+      <a class="icon icon-search" href="{{my.href}}"></a>
+    </label>
+
+    <div class="list card" ng-show="searchList.length">
+      <a class="item"  ng-repeat="d in searchList" href="#/team-creation/searchResult/{{d.name}}">
+        {{d.name}}
+      </a>
+    </div>
+
+  </ion-content>
+
+</ion-view>

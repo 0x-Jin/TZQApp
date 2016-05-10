@@ -1,0 +1,63 @@
+<ion-view view-title="我的发现">
+
+  <ion-nav-bar class="app-index-header">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-group item-icon-left" style="font-size: 25px;" href="#/team-creation/rule" nav-direction="forward"></a>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+      <a class=" button button-icon icon icon-chat" style="font-size: 25px; " href="#/tab/teamRank" nav-direction="forward"></a>
+
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content padding="false"  class="app-discovery-index-body">
+
+    <ion-refresher on-refresh="doRefresh()" pulling-text="更新中..." refreshing-text="完毕" refreshing-icon="ion-loading-b"></ion-refresher>
+
+    <img style="height: auto;width: 100%;" ng-src="img/temp/slide1.png" >
+
+    <div class="dataBox" ng-repeat="d in list">
+      <a href="#/tab/discovery-detail/{{d.id}}">
+
+        <!--有图片-->
+        <div class="row" ng-show="d.img">
+
+          <div class="col col-25">
+            <img ng-src="{{d.img}}" style="width: 100%; height: 100%">
+          </div>
+
+          <div class="col col-75">
+            <h1 class="title">{{d.title}}</h1>
+            <div class="content">
+              {{d.msg | limitTo: 50}}
+            </div>
+            <div class="time" style="float: right; color: #2e2e2e">{{d.time}}</div>
+          </div>
+
+        </div>
+
+        <!--没图片-->
+        <div class="row" ng-show="!d.img">
+          <div class="col col-100">
+
+            <h1 class="title" style="margin-top: 3%">{{d.title}}</h1>
+            <div class="content">
+              {{d.msg | limitTo: 60}}
+            </div>
+            <div class="time" style="float: right; color: #2e2e2e">{{d.time}}</div>
+
+          </div>
+        </div>
+
+      </a>
+    </div>
+
+
+
+
+  </ion-content>
+
+</ion-view>
+
+

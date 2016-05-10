@@ -1,0 +1,54 @@
+<ion-view view-title="交易历史" class="app-account-history-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-history-body" has-header="false">
+
+    <!--选择时间-->
+    <div class="chooseMonth">
+      <ul>
+        <li class="text">选择月份：</li>
+        <li class="month"><a> 2015 - 8 </a></li> <!--/////////////////////////---->
+      </ul>
+    </div>
+
+    <div class="row sumData">
+      <div class="col" style="border-right: 1px solid rgba(0,0,0,0.08);">
+        总盈亏
+        <div class="number">123元</div>
+      </div>
+      <div class="col" style="border-right: 1px solid rgba(0,0,0,0.08);">
+        总单数
+        <div class="number">9</div>
+      </div>
+      <div class="col">
+        总手数
+        <div class="number">9</div>
+      </div>
+    </div>
+
+    <!--数据-->
+    <div ng-repeat="d in list" style="background-color: white">
+      <div class="row dataListItem">
+        <div class="col">{{d.num}}</div>
+        <div class="col">{{d.type}}</div>
+        <div class="col">{{d.price}}</div>
+        <div class="col">{{d.amount}}</div>
+        <div class="col">{{d.judge}}</div>
+        <div class="col" style="color: #ff4545">{{d.float}}</div>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>
+

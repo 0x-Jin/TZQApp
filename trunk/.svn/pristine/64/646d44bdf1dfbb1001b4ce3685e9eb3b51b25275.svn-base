@@ -1,0 +1,43 @@
+<ion-view view-title="消息" class="app-account-news-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-news-body" has-header="false">
+
+    <div  ng-repeat="d in newsList">
+      <a class="item item-borderless" ng-click="next( d )" href="{{my.href}}">
+
+        <div class="iconDiv">
+          <i class="icon ion-ios-body" ng-show="( d.type == '我的圈子')" style="background-color: #70cdfd"></i>
+          <i class="icon ion-android-volume-up" ng-show="( d.type == '系统通知')" style="background-color: #c2d952"></i>
+          <i class="icon ion-loop" ng-show="( d.type == '互动消息')" style="background-color: #ff9486"></i>
+          <i class="icon ion-social-yen" ng-show="( d.type == '交易消息')" style="background-color: #fee262"></i>
+        </div>
+
+        <div style="float: left; margin-left: 3%;">
+
+          <div style="font-weight: bold;  font-size: 19px;  margin-bottom: 9%">{{d.type}}</div>
+
+          <div style="font-size: 15px">
+            {{d.msg | limitTo:13}}<span ng-show="( d.msg.length > 13 )">…</span>
+          </div>
+
+
+        </div>
+
+        <div style="position: absolute; right: 15px; font-size: 14px; color: rgba( 0,0,0,0.5 )">{{d.time}}</div>
+
+      </a>
+    </div>
+
+  </ion-content>
+
+</ion-view>

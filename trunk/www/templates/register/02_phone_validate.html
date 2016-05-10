@@ -1,0 +1,28 @@
+
+<ion-view view-title="注册" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2>请输入您收到的手机验证码</h2>
+    </div>
+
+    <label class="item item-input" style="width: 60%;float: left;border-radius: 5px;">
+      <i class="icon icon-pencil" style=" margin-right: 5px;"></i>
+      <input type="text" ng-model="my.vCode">
+    </label>
+    <div style="float: left;width: 10%;height: 1px;"></div>
+
+    <button ng-click="startVcodeCountDown()"
+            class="button button-outline"
+            ng-class="{'button-stable':!my.timeup, 'button-positive':my.timeup}"
+            style="width: 30%;background-color: #fff;"
+            ng-disabled="!my.timeup">
+      {{my.countdown}}
+    </button>
+
+    <div class="clear"></div>
+    <a class="button app-big-button" ng-click="next('/register/set-pwd')" ng-disabled="!my.isChecked">下一步</a>
+  </ion-content>
+</ion-view>

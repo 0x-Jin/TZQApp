@@ -1,0 +1,51 @@
+{
+  "list":
+[
+{"id": 1, "profitandloss": "189%", "teamName": "广州满定", "desc": "大仓做趋势,小仓做微波", "img":"img/temp/team_img2.jpg",  "isSub": false, "fansNo": 3434
+}
+,
+{
+"id": 2, "profitandloss": "180%", "teamName": "大战江湖", "desc": "跟着哥走,你会赢", "img":"img/temp/2_14.png", "isSub": true, "fansNo": 344}
+,
+{
+"id": 3, "profitandloss": "179%", "teamName": "神预测", "desc": "今天不赚钱,同龄人就要抱你女儿,所以你还在想什么呢?", "img":"img/temp/2_10.png", "isSub": false, "fansNo": 1134
+}
+,
+{
+"id": 4, "profitandloss": "150%", "teamName": "广州tt", "desc": "趋势为主,趋势为主", "img":"img/temp/2_04.png", "isSub": false, "fansNo": 100
+}
+,
+{
+"id": 5, "profitandloss": "98%", "teamName": "大牛df", "desc": "想要钱,跟哥搞起", "img":"img/temp/2_02.png", "isSub": false, "fansNo": 3434
+}
+,
+  {
+    "id": 6, "profitandloss": "150%", "teamName": "广州dd趋势", "desc": "趋势为主,趋势为主", "img":"img/temp/2_07.png", "isSub": false, "fansNo": 100
+  }
+,
+  {
+    "id": 7, "profitandloss": "98%", "teamName": "大牛df啊", "desc": "想要钱,跟哥搞起", "img":"img/temp/2_06.png", "isSub": false, "fansNo": 3434
+  },
+  {
+    "id": 8, "profitandloss": "150%", "teamName": "广州趋df势", "desc": "趋势为主,趋势为主", "img":"img/temp/2_10.png", "isSub": false, "fansNo": 100
+  }
+,
+  {
+    "id": 9, "profitandloss": "98%", "teamName": "大牛牛d逼啊", "desc": "想要钱,跟哥搞起", "img":"img/temp/2_11.png", "isSub": false, "fansNo": 3434
+  },
+  {
+    "id": 10, "profitandloss": "150%", "teamName": "广州fd趋df势", "desc": "趋势为主,趋势为主", "img":"img/temp/2_17.png", "isSub": false, "fansNo": 100
+  }
+,
+  {
+    "id": 11, "profitandloss": "98%", "teamName": "大牛牛sds啊s", "desc": "想要钱,跟哥搞起", "img":"img/temp/2_14.png", "isSub": false, "fansNo": 3434
+  },
+  {
+    "id": 12, "profitandloss": "150%", "teamName": "广州趋势", "desc": "趋势为主,趋势为主", "img":"img/temp/2_12.png", "isSub": false, "fansNo": 100
+  }
+,
+  {
+    "id": 13, "profitandloss": "98%", "teamName": "大牛sddf啊", "desc": "想要钱,跟哥搞起", "img":"img/temp/2_11.png", "isSub": false, "fansNo": 3434
+  }
+]
+}

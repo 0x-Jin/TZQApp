@@ -1,0 +1,89 @@
+<ion-view view-title="<strong>个人中心</strong>" class="light">
+
+  <ion-nav-bar class="app-account-index-header">
+
+    <ion-nav-buttons side="left">
+      <a><img class="header_img" ng-src="img/temp/2_02.png"> </a>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+      <a class="button button-icon icon ion-android-expand light"></a>
+      <a class="button button-icon icon ion-android-volume-up light" href="#/tab/account-news"></a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-index-body">
+
+    <!--已登录-->
+    <div ng-show="my.login">
+
+      <div class="loginAccountPageHeader">
+
+        <div style="position: relative;  text-align: center;">
+
+          <div class="totalAssets">总资产</div>
+          <div class="amountOfMoney">4,456.00</div>
+        </div>
+
+        <a class="securities" href="#/tab/account-winTicket">
+          <p  class="securitiesText">赢家券</p>
+          <p  class="securitiesNum">13张</p>
+        </a>
+
+        <div class="remain">
+          <p class="remainText">余额</p>
+          <p class="remainNum">1028</p>
+        </div>
+
+        <div style="clear: both"></div>
+
+      </div>
+
+      <div class="item item-borderless" style="width: 100%; margin-bottom: 2.5%; padding: 4.8% 8%">
+        <div class="recharge">
+          <i class="icon ion-social-yen"></i> 充值
+        </div>
+        <div class="withdraw">
+          <i class="icon ion-card"></i> 提现
+        </div>
+      </div>
+
+      <div>
+
+        <a class="item item-borderless itemPadding item_border_bottom" href="#/tab/account-history">
+          <i class="icon ion-ios-clock-outline icon-size"></i> 交易历史
+          <i class="icon ion-ios-arrow-right icon-size arrow_right"></i>
+        </a>
+
+        <a class="item item-borderless itemPadding" href="#/tab/account-brokers" style="margin-bottom: 3.5%">
+          <i class="icon ion-ios-clock-outline icon-size"></i> 经纪人
+          <i class="icon ion-ios-arrow-right icon-size arrow_right"></i>
+        </a>
+
+        <a class="item item-borderless itemPadding item_border_bottom" href="#/tab/account-dynamic">
+          <i class="icon ion-ios-clock-outline icon-size"></i> 我的动态
+          <i class="icon ion-ios-arrow-right icon-size arrow_right"></i>
+        </a>
+        <a class="item item-borderless itemPadding item_border_bottom" href="#/teamIndex/account/team-index/mine">
+          <i class="icon ion-ios-clock-outline icon-size"></i> 我的圈子
+          <i class="icon ion-ios-arrow-right icon-size arrow_right"></i>
+        </a>
+        <a class="item item-borderless itemPadding item_border_bottom" href="#/tab/account-collection">
+          <i class="icon ion-ios-clock-outline icon-size"></i> 我的收藏
+          <i class="icon ion-ios-arrow-right icon-size arrow_right"></i>
+        </a>
+        <a class="item item-borderless itemPadding" href="#/tab/account-setting">
+          <i class="icon ion-ios-clock-outline icon-size"></i> 设置
+          <i class="icon ion-ios-arrow-right icon-size arrow_right"></i>
+        </a>
+
+      </div>
+
+      <!--<a class="button app-big-button" ng-click="logout()" >退出</a>-->
+    </div>
+
+  </ion-content>
+
+</ion-view>
+

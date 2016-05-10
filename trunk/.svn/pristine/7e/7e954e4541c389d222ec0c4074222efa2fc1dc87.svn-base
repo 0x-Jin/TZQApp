@@ -1,0 +1,71 @@
+<ion-content class="app-team-index" on-scroll="s()" delegate-handle="mainScroll">
+
+  <ion-refresher on-refresh="onRefresh()"
+                 pulling-text="更新中..."
+                 refreshing-text="完毕"
+                 refreshing-icon="ion-loading-b">
+  </ion-refresher>
+
+
+
+  <div class="index-header">
+      <div class="bar bar-header bar-light toolbar" >
+        <a class="button button-icon icon icon-back" ng-click="goBack()">
+        </a>
+        <h1 class="title">Allen WONG的裙子</h1>
+        <a class="button button-icon icon icon-more" ng-click="goBack()">
+        </a>
+      </div>
+      <div class="team-info">
+         <img src="img/temp/team_img2.jpg" class="team-round-img">
+         <div class="clear"></div>
+        <span>成员:10</span>
+        <span>|</span>
+        <span>粉丝:110</span>
+        <h5>跟着哥去赚大钱吧,走起走起走起</h5>
+      </div>
+      <div class="bg">
+        <img src="img/team-index-bg-2.png" width="100%" height="200px">
+      </div>
+  </div>
+
+
+
+
+    <div class="row app-team-index-tab-hd">
+      <div class="col active">成绩</div>
+      <div class="col">讨论</div>
+      <div class="col">成员</div>
+    </div>
+
+
+    <div class="app-divider"></div>
+    <ion-slide-box auto-play="false" show-pager="false" on-slide-changed="teamTabChange($index)" delegate-handle="teamTab">
+      <ion-slide>
+        <div ng-include="'templates/teams/team-index-tab-score.html'"></div>
+      </ion-slide>
+      <ion-slide>
+        <div ng-include="'templates/teams/team-index-tab-discuss.html'"></div>
+      </ion-slide>
+      <ion-slide>
+        <div ng-include="'templates/teams/team-index-tab-member.html'"></div>
+      </ion-slide>
+  </ion-slide-box>
+  </ion-content>
+
+<tzq-modal modal-id="app-popup-member-s-detail">
+  <div style="text-align: center; ">
+    <h5>
+      12:49 建仓<br>
+      铜棒 10元 1手 多 3213
+    </h5>
+    <h5>
+      13:49 平仓<br>
+      铜棒 10元 1手 多 3213
+    </h5>
+    <a class="button" style="border:none;color:#ffffff;line-height: 80px; font-size: 18px; font-weight: 600; margin-bottom: 10px;background: #333333; height: 80px;width: 80px; border-radius: 50px;"
+       ng-click="closeModal()">
+      知道了
+    </a>
+  </div>
+</tzq-modal>

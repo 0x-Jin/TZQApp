@@ -1,0 +1,75 @@
+<ion-view view-title="我的关注">
+
+  <ion-nav-bar class="app-index-header">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-group item-icon-left" style="font-size: 25px;" href="#/team-creation/rule" nav-direction="forward"></a>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+      <a class=" button button-icon icon icon-chat" style="font-size: 25px; " href="#/tab/teamRank" nav-direction="forward"></a>
+
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content padding="false" class="app-sub-index-body">
+
+    <ion-refresher on-refresh="doRefresh()" pulling-text="更新中..." refreshing-text="完毕" refreshing-icon="ion-loading-b"></ion-refresher>
+
+    <div class="block">
+      <div style="color: #ff6d00; font-size: 20px; padding: 40px; text-align: center" ng-show="teamList.length == 0">
+        还没有关注任何圈子哦！
+      </div>
+
+      <div class="list" ng-show="teamList.length > 0">
+
+        <a class="item" ng-href="#/teamIndex/sub/team-index/{{team.id}}" ng-repeat="team in teamList">
+
+          <div class="col1">
+            <div ng-class="{round2:true, color11:team.rankNo==1, color21:team.rankNo==2, color31:team.rankNo>=3}">
+              <div ng-class="{round1:true, color1:team.rankNo==1, color2:team.rankNo==2, color3:team.rankNo>=3}">{{team.profitandloss}}</div>
+            </div>
+          </div>
+          <div class="col2">
+            <h2>&nbsp;</h2>
+            <h1>{{team.teamName}}</h1>
+            <span>{{team.desc}}</span>
+          </div>
+          <div class="col3">
+            <h2 class="num">{{team.fansNo}}</h2>
+            <div style="clear: both;"></div>
+            <i class="ion-android-arrow-up num2">&nbsp;6</i>
+          </div>
+
+        </a>
+      </div>
+
+    </div>
+
+    <div class="block" style="padding: 5px 26px">
+      <div>
+        <div class="recommend">推荐关注</div>
+        <a class="change" ng-click="nextIndex()">
+          <i class="ion-ios-loop-strong"></i>
+          <span style="color: black">换一换</span>
+        </a>
+      </div>
+      <div style="clear: both"></div>
+
+      <div ng-repeat="recommend in recommendList">
+        <div class="subItem">
+          <img class="subItem_img" src="{{ recommend.member.img }}">
+          <h1>{{recommend.member.mName}}</h1>
+          <span>月收益{{recommend.member.income}}%</span>
+          <br/><br/>  <a class="addSub">+ 关注</a>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+
+
+

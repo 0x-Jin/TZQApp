@@ -1,0 +1,110 @@
+<ion-header-bar  class="bar bar-header app-common-header">
+  <a class="button button-icon icon icon-group " style="font-size: 25px;" href="#/team-creation/rule" nav-direction="forward"></a>
+  <h1 class="title" >
+   战队总榜
+  </h1>
+  <a class=" button button-icon icon icon-search" style="font-size: 25px; "  href="#/tab/search" nav-direction="forward"></a>
+</ion-header-bar>
+
+  <ion-content padding="false">
+    <ion-refresher on-refresh="doRefresh()"
+                   pulling-text="更新中..."
+                   refreshing-text="完毕"
+                   refreshing-icon="ion-loading-b">
+
+    </ion-refresher>
+
+    <div class="app-rank-summary-type">
+      <a ng-class="{active:isBigV}" ng-click="changeTeam('v')">大V</a>
+      <a ng-class="{active:!isBigV}" ng-click="changeTeam('p')">个人</a>
+    </div>
+
+    <div class="card app-index-myteam" style="height: 10px;">
+      <div class="item item-divider app-index-card-divider"></div>
+    </div>
+
+    <div class="app-card-tab-title">
+      <a class="col active" ng-click="switchTo(1, false, 'day')">日</a>
+      <a class="col" ng-click="switchTo(2, false, 'week')">周</a>
+      <a class="col" ng-click="switchTo(3, false, 'month')">月</a>
+    </div>
+
+    <ion-slide-box auto-play="false" show-pager="false" on-slide-changed="teamTabChange($index)" delegate-handle="teamTab">
+      <ion-slide>
+        <div class="list card app-index-myteam">
+
+          <a ng-href="#/team-index/132" class="item" ng-repeat="team in teamList">
+            <div class="col1">
+              <span ng-class="{rankno:true,color1:team.rankNo==1, color2:team.rankNo==2, color3:team.rankNo>=3}">{{team.rankNo}}</span>
+              <div ng-class="{round2:true, color11:team.rankNo==1, color21:team.rankNo==2, color31:team.rankNo>=3}">
+                <div ng-class="{round1:true, color1:team.rankNo==1, color2:team.rankNo==2, color3:team.rankNo>=3}">{{team.profitandloss}}</div>
+              </div>
+            </div>
+            <div class="col2">
+              <h1>{{team.teamName}}<span ng-if="isBigV" class="v">V</span></h1>
+              <span>{{team.desc}}</span>
+            </div>
+            <div class="col3">
+              <i class="fans">粉丝  {{team.fansNo}}</i>
+              <div style="clear: both;"></div>
+              <i ng-if="!team.isSub" class="ion ion-ios-plus-outline add" ng-click="addSub($event)">&nbsp;&nbsp;&nbsp;关注</i>
+            </div>
+          </a>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="list card app-index-myteam">
+
+          <a ng-href="#/team-index/132" class="item" ng-repeat="team in teamList" >
+            <div class="col1">
+              <span ng-class="{rankno:true,colorv1:team.rankNo==1, colorv2:team.rankNo==2, colorv3:team.rankNo>=3}">{{team.rankNo}}</span>
+              <div ng-class="{round2:true, colorv11:team.rankNo==1, colorv21:team.rankNo==2, colorv31:team.rankNo>=3}">
+                <div ng-class="{round1:true, colorv1:team.rankNo==1, colorv2:team.rankNo==2, colorv3:team.rankNo>=3}">{{team.profitandloss}}</div>
+              </div>
+            </div>
+            <div class="col2">
+              <h1>{{team.teamName}}<span ng-if="isBigV" class="v">V</span></h1>
+              <span>{{team.desc}}</span>
+            </div>
+            <div class="col3">
+              <i class="fans">粉丝  {{team.fansNo}}</i>
+              <div style="clear: both;"></div>
+              <i ng-if="!team.isSub" class="ion ion-ios-plus-outline add" ng-click="addSub()">&nbsp;&nbsp;&nbsp;关注</i>
+            </div>
+          </a>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="list card app-index-myteam">
+          <a ng-href="#/team-index/132" class="item" ng-repeat="team in teamList" >
+            <div class="col1">
+              <span ng-class="{rankno:true,colorv1:team.rankNo==1, colorv2:team.rankNo==2, colorv3:team.rankNo>=3}">{{team.rankNo}}</span>
+              <div ng-class="{round2:true, colorv11:team.rankNo==1, colorv21:team.rankNo==2, colorv31:team.rankNo>=3}">
+                <div ng-class="{round1:true, colorv1:team.rankNo==1, colorv2:team.rankNo==2, colorv3:team.rankNo>=3}">{{team.profitandloss}}</div>
+              </div>
+            </div>
+            <div class="col2">
+              <h1>{{team.teamName}}<span ng-if="isBigV" class="v">V</span></h1>
+              <span>{{team.desc}}</span>
+            </div>
+            <div class="col3">
+              <i class="fans">粉丝  {{team.fansNo}}</i>
+              <div style="clear: both;"></div>
+              <i ng-if="!team.isSub" class="ion ion-ios-plus-outline add" ng-click="addSub()">&nbsp;&nbsp;&nbsp;关注</i>
+            </div>
+          </a>
+
+        </div>
+
+      </ion-slide>
+    </ion-slide-box>
+
+
+
+
+
+  </ion-content>
+
+

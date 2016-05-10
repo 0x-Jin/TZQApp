@@ -1,0 +1,104 @@
+<ion-view view-title="帖子详情" class="app-team-index-tab-discuss-detail-view">
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-team-index-tab-discuss-detail-body" has-header="false">
+
+    <!--发表人-->
+    <div class="block">
+
+        <!--发表人个人信息-->
+        <div class="row">
+          <div class="col col-20">
+             <img src="{{my.discussDetail.member.img}}" class="team-round-img" style="width: 40px;height: 40px;">
+          </div>
+          <div class="col col-25">
+            <p style="font-size: 15px"><strong>{{my.discussDetail.member.mName}}</strong></p>
+            <p style="font-size: 10px">来自：金赤城</p>
+          </div>
+          <div class="col col-25" >
+            <div class="nick-name">{{my.discussDetail.member.nickName}}</div>
+          </div>
+          <div class="col col-30">
+            <div style="float: right; font-size: 10px">{{my.discussDetail.time}}</div>
+          </div>
+        </div>
+
+        <!--发布的内容-->
+        <div class="row">
+          <div class="col col-100 msg">{{my.discussDetail.msg}}</div>
+        </div>
+
+      </div>
+
+    <!--评论人-->
+    <div class="block"  ng-repeat="t in my.discussDetail.feedbacks">
+
+      <!--评论者个人信息-->
+      <div class="row">
+        <div class="col col-20">
+           <img src="img/temp/team_img2.jpg" class="team-round-img" style="width: 40px;height: 40px;">
+        </div>
+        <div class="col col-25">
+          <p style="font-size: 15px"><strong>{{t.mName}}</strong></p>
+          <p style="font-size: 10px">来自：金赤城</p>
+        </div>
+        <div class="col col-25" >
+          <div class="nick-name">将军</div>
+        </div>
+        <div class="col col-30">
+          <div style="float: right; font-size: 10px">三天前</div>
+        </div>
+      </div>
+
+      <!--评论的内容-->
+      <div class="row">
+        <div class="col col-20"></div>
+        <div class="col col-80 msg">{{t.feedback}}</div>
+      </div>
+
+      <!--评论和点赞按钮-->
+      <div class="row" style="margin-top: 10px">
+        <div class="button-clear col col-60" ></div>
+        <div class="button-clear col col-20" style="text-align: center" >
+          <a class="icon icon-msg" style="margin-right: 10px" ng-click="addFeedback( $index )"></a>3
+        </div>
+        <div class="button-clear col col-20" style="text-align: center">
+          <a class="icon icon-good" style="margin-right: 10px" ng-click="addGood( $index )"></a>5
+        </div>
+      </div>
+
+    </div>
+
+    <h4 style="text-align: center">暂无更多</h4>
+    <br/><br/>
+
+  </ion-content>
+
+  <div class="row toolbar footer">
+
+    <div class="button-clear col col-34" ng-click="" style="border-right: 1px solid rgba(0,0,0,0.3);">
+      <a class="icon icon-msg" style="margin-right: 10px"></a>{{my.discussDetail.feedback}}
+    </div>
+    <div class="button-clear col col-33" ng-click=""  style="border-right: 1px solid rgba(0,0,0,0.3);">
+      <a class="icon icon-good" style="margin-right: 10px"></a>{{my.discussDetail.good}}
+    </div>
+    <div class="button-clear col col-33 dropup" >
+      <a style="width: 100%; display: inline-block;" class="icon icon-par dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+        <li><a href="#">收藏</a></li>
+        <li><a href="#">举报</a></li>
+      </ul>
+    </div>
+  </div>
+
+</ion-view>

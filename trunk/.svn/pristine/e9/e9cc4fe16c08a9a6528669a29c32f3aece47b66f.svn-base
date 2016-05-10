@@ -1,0 +1,75 @@
+{
+  "list":
+    [
+      {
+        "systemNews":
+          [
+            {
+              "id":1, "headImg":"img/temp/2_17.png", "newsContentImg":"img/temp/discovery_img1.png", "newsContentText":""
+            }
+          ,
+            {
+              "id":2, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"您收到了来自“天空圈”的加入邀请。"
+            }
+          ,
+            {
+              "id":3, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"您已被Rachel移除群组“节节高升”。"
+            }
+          ,
+            {
+              "id":4, "headImg":"img/temp/2_17.png", "newsContentImg":"img/temp/discovery_img2.jpg", "newsContentText":""
+            }
+          ,
+            {
+              "id":5, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"您已被Rachel移出群组“节节高升”。"
+            }
+          ]
+      }
+      ,
+      {
+        "cycleNews":
+          [
+            {
+              "id":1, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"买入两手白银（3000克）"
+            }
+            ,
+            {
+              "id":2, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"一笔订单已平仓，盈亏+23元"
+            }
+          ,
+            {
+              "id":3, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"电报指令：今晚非农，大家好好留意。"
+            }
+          ]
+      }
+      ,
+      {
+        "interactionNews":
+        [
+          {
+            "id":1, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"你说的很对 ———“天空战队”电报指令。"
+          }
+          ,
+          {
+            "id":2, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"我太赞同你们的看法了 ———“铁马战队”电报指令。"
+          }
+        ]
+      }
+      ,
+      {
+        "tradeNews":
+          [
+            {
+              "id":1, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"",
+              "orderNum":"1166362", "closeTime":"2015-09-09 22:45", "closePrice":"40.46", "closeType":"止损平仓", "profitAmount":"-1元", "surplus":"9元"
+            }
+            ,
+            {
+              "id":2, "headImg":"img/temp/2_17.png", "newsContentImg":"", "newsContentText":"",
+              "orderNum":"27278333", "closeTime":"2015-10-09 22:45", "closePrice":"10.46", "closeType":"止损平仓", "profitAmount":"-11元", "surplus":"9元"
+            }
+          ]
+      }
+
+    ]
+}

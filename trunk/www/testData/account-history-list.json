@@ -1,0 +1,28 @@
+{
+  "list":
+  [
+    {
+      "num":"0803", "type":"铜棒", "price":"10元", "amount":"1手", "judge":"多", "float":"3.35"
+    }
+    ,
+    {
+      "num":"0803", "type":"铜棒", "price":"10元", "amount":"1手", "judge":"多", "float":"3.35"
+    }
+  ,
+    {
+      "num":"0803", "type":"铜棒", "price":"10元", "amount":"1手", "judge":"多", "float":"3.35"
+    }
+  ,
+    {
+      "num":"0803", "type":"铜棒", "price":"10元", "amount":"1手", "judge":"多", "float":"3.35"
+    }
+  ,
+    {
+      "num":"0803", "type":"铜棒", "price":"10元", "amount":"1手", "judge":"多", "float":"3.35"
+    }
+  ,
+    {
+      "num":"0803", "type":"铜棒", "price":"10元", "amount":"1手", "judge":"多", "float":"3.35"
+    }
+  ]
+}

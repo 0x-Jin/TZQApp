@@ -1,0 +1,8 @@
+
+<ion-view view-title="选择圈子类型" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <button class="button button-block icon-left btn-white icon-person-card " ng-click="next(1)">个人圈子</button>
+    <div class="clear"></div>
+    <button class="button button-block icon-left btn-white icon-person" ng-click="next(2)">企业圈子</button>
+  </ion-content>
+</ion-view>

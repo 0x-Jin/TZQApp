@@ -1,0 +1,59 @@
+<ion-view view-title="赢家券" class="app-trade-winTicket-phoneNum-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()"></a>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+      <a style="color: #2e2e2e; text-decoration: none; line-height: 35px" href="#/tab/account-winTicket-recommendGift">
+        推荐有礼</a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-trade-winTicket-phoneNum-body" has-header="false">
+
+    <div class="row" id="tabs">
+      <div id="tab0" class="col active" ng-click="selectTab(0)">未使用</div>
+      <div id="tab1" class="col" ng-click="selectTab(1)">已使用</div>
+      <div id="tab2" class="col" ng-click="selectTab(2)">已过期</div>
+    </div>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" active-slide="my.winTabs">
+
+      <!--未使用-->
+      <ion-slide>
+        <div style="padding: 3%;" ng-repeat="t in my.unUsed_tenList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_1.png">
+        </div>
+        <div style="padding: 3%;" ng-repeat="t in my.unUsed_twoHundredList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_2.png">
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div style="padding: 3%;" ng-repeat="t in my.used_tenList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_1.png">
+        </div>
+        <div style="padding: 3%;" ng-repeat="t in my.used_twoHundredList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_2.png">
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div style="padding: 3%;" ng-repeat="t in my.useless_tenList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_1.png">
+        </div>
+        <div style="padding: 3%;" ng-repeat="t in my.useless_twoHundredList">
+          <img style="width: 100%" ng-src="img/temp/winTicket_2.png">
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+
+  </ion-content>
+
+</ion-view>

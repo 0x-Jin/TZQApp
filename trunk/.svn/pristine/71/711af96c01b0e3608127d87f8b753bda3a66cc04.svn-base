@@ -1,0 +1,16 @@
+
+<ion-view view-title="投知圈名字" class="app-team-creation-view">
+  <ion-content class="app-team-creation-body" >
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2>必须先起一个牛X的名字,是吧?</h2>
+    </div>
+
+    <label class="item item-input">
+      <i class="icon icon-pencil" style=" margin-right: 5px;"></i>
+      <input type="text" ng-model="my.teamName">
+    </label>
+
+    <div class="clear"></div>
+    <a class="button app-big-button" ng-click="next()" ng-disabled="!my.isChecked">完成</a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "231549fc-bda0-bc4e-aa8f-84b0492c0cc3++1375",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "231549fc-bda0-bc4e-aa8f-84b0492c0cc3++1375" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "231549fc-bda0-bc4e-aa8f-84b0492c0cc3++1375" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "434A59C1-E9B9-4CE8-B99E-F6890FAEE371",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "231549fc-bda0-bc4e-aa8f-84b0492c0cc3++1375" : "TZQApp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TZQ",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "platforms\/ios\/TZQ.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.155.1\/svn\/island",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "231549fc-bda0-bc4e-aa8f-84b0492c0cc3++1375"
+    }
+  ]
+}

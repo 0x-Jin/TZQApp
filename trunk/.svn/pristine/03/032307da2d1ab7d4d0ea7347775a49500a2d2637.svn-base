@@ -1,0 +1,24 @@
+{
+  "list":
+  [
+    {
+      "id":1, "rankNo": 1, "profitandloss": "189%", "teamName": "广州满定", "desc": "大仓做趋势,小仓做微波", "isSub": false, "fansNo": 3434
+    }
+  ,
+    {
+      "id":2, "rankNo": 2, "profitandloss": "180%", "teamName": "大战江湖", "desc": "跟着哥走,你会赢", "isSub": true, "fansNo": 344
+    }
+  ,
+    {
+      "id":3, "rankNo": 3, "profitandloss": "179%", "teamName": "神预测", "desc": "今天不赚钱,同龄人就要抱你女儿,所以你还在想什么呢?", "isSub": false, "fansNo": 1134
+    }
+  ,
+    {
+      "id":4, "rankNo": 4, "profitandloss": "150%", "teamName": "广州趋势", "desc": "趋势为主,趋势为主", "isSub": false, "fansNo": 100
+    }
+  ,
+    {
+      "id":5, "rankNo": 5, "profitandloss": "98%", "teamName": "大牛牛逼啊", "desc": "想要钱,跟哥搞起", "isSub": false, "fansNo": 3434
+    }
+  ]
+}

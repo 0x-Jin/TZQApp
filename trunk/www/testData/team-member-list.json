@@ -1,0 +1,33 @@
+{
+  "list":
+[
+{"id": 1, "profitandloss": "189%", "mName": "广州满定", "desc": "大仓做趋势,小仓做微波", "nickName":"X1", "img":"img/temp/team_img2.jpg", "rankNo":1
+}
+,
+{
+"id": 2, "profitandloss": "180%", "mName": "大战江湖", "desc": "跟着哥走,你会赢", "nickName":"X2", "img":"img/temp/2_14.png", "rankNo":2}
+,
+{
+"id": 3, "profitandloss": "179%", "mName": "神预测", "desc": "今天不赚钱,同龄人就要抱你女儿,所以你还在想什么呢?", "nickName":"X3", "img":"img/temp/2_10.png", "rankNo":3
+}
+,
+{
+"id": 4, "profitandloss": "150%", "mName": "广州tt", "desc": "趋势为主,趋势为主", "nickName":"X4", "img":"img/temp/2_04.png", "rankNo":4
+}
+,
+{
+"id": 5, "profitandloss": "98%", "mName": "大牛df", "desc": "想要钱,跟哥搞起", "nickName":"X5", "img":"img/temp/2_02.png", "rankNo":5
+}
+,
+  {
+    "id": 6, "profitandloss": "150%", "mName": "广州dd趋势", "desc": "趋势为主,趋势为主", "nickName":"X6", "img":"img/temp/2_07.png", "rankNo":6
+  }
+,
+  {
+    "id": 7, "profitandloss": "98%", "mName": "大牛df啊", "desc": "想要钱,跟哥搞起", "nickName":"X7", "img":"img/temp/2_06.png", "rankNo":7
+  },
+  {
+    "id": 8, "profitandloss": "150%", "mName": "广州趋df势", "desc": "趋势为主,趋势为主", "nickName":"X8", "img":"img/temp/2_10.png", "rankNo":8
+  }
+]
+}

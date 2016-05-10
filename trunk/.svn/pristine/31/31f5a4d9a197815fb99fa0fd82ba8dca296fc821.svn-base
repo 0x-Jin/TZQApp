@@ -1,0 +1,2396 @@
+/**ICONs definition for APP**/
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?7svi8n');
+  src:url('../fonts/icomoon.eot?7svi8n#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?7svi8n') format('truetype'),
+  url('../fonts/icomoon.woff?7svi8n') format('woff'),
+  url('../fonts/icomoon.svg?7svi8n#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*="icon-"]{
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-m2-outline:before {
+  content: "\e92a";
+}
+.icon-m3:before {
+  content: "\e92b";
+}
+
+.icon-index:before {
+  content: "\e900";
+}
+.icon-index-on:before {
+  content: "\e901";
+}
+.icon-discovery:before {
+  content: "\e902";
+}
+.icon-discovery-on:before {
+  content: "\e903";
+}
+.icon-plus:before {
+  content: "\e904";
+}
+.icon-plus-on:before {
+  content: "\e905";
+}
+.icon-account:before {
+  content: "\e906";
+}
+.icon-account-on:before {
+  content: "\e907";
+}
+.icon-trade:before {
+  content: "\e908";
+}
+.icon-trade-on:before {
+  content: "\e909";
+}
+.icon-group:before {
+  content: "\e90a";
+}
+.icon-chat:before {
+  content: "\e90b";
+}
+.icon-search:before {
+  content: "\e90c";
+}
+.icon-round1:before {
+  content: "\e90d";
+}
+.icon-create-team:before {
+  content: "\e90e";
+}
+.icon-join-team:before {
+  content: "\e90f";
+}
+.icon-person-card:before {
+  content: "\e910";
+}
+.icon-person:before {
+  content: "\e911";
+}
+.icon-qq:before {
+  content: "\e912";
+}
+.icon-wechat:before {
+  content: "\e913";
+}
+.icon-lock:before {
+  content: "\e914";
+}
+.icon-right:before {
+  content: "\e915";
+}
+.icon-lock2:before {
+  content: "\e916";
+}
+.icon-pad:before {
+  content: "\e917";
+}
+.icon-unlock:before {
+  content: "\e918";
+}
+.icon-lock3:before {
+  content: "\e919";
+}
+.icon-k1:before {
+  content: "\e91a";
+}
+.icon-person2:before {
+  content: "\e91b";
+}
+.icon-lock4:before {
+  content: "\e91c";
+}
+.icon-m1:before {
+  content: "\e91d";
+}
+.icon-m2:before {
+  content: "\e91e";
+}
+.icon-exchange:before {
+  content: "\e91f";
+}
+.icon-exchange-on:before {
+  content: "\e920";
+}
+.icon-pencil:before {
+  content: "\e921";
+}
+.icon-msg-on:before {
+  content: "\e922";
+}
+.icon-msg:before {
+  content: "\e923";
+}
+.icon-good:before {
+  content: "\e924";
+}
+.icon-good-on:before {
+  content: "\e925";
+}
+.icon-par-on:before {
+  content: "\e926";
+}
+.icon-par:before {
+  content: "\e927";
+}
+.icon-more:before {
+  content: "\e928";
+}
+.icon-back:before {
+  content: "\e929";
+}
+
+h3{
+  color:#707070;
+}
+
+/**Customized CSS definition top on the IONIC framework**/
+.tabs{
+  background-color: #FFFFFF;
+  background-image: linear-gradient(0deg, #f2f1f1, #f2f1f1 0%, transparent 0%);
+  background-position: center;
+  box-shadow:0px 0px 0px 1px #f2f1f1;
+  /*background: url("../img/tabs_bg_02.png") no-repeat;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size:contain;*/
+  /*height: 80px;*/
+  height: 50px;
+  padding-top: 6px;
+}
+
+div.tab-nav.tabs a:nth-of-type(3){
+  overflow: visible;
+  opacity: 1.0;
+}
+
+div.tab-nav.tabs a:nth-of-type(3) .tab-title{
+  position: relative;
+  top:-28px;
+}
+
+.tab-item .icon{
+  font-size:20px;
+  line-height: 1.1;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active,
+ion-tabs.tabs-color-active-positive .tab-item.active,
+ion-tabs.tabs-color-active-positive .tab-item.activated{
+  color:#fcd953;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item{
+  color:#000;
+}
+
+.tabs-icon-top > .tabs .tab-item{
+  line-height: 5px;
+}
+
+
+.tab-item .big{
+  width: 60px;
+  height: 60px;
+  /*-webkit-border-radius: 60px;*/
+
+  position: relative;
+  top: -33px;
+  font-size: 50px;
+  line-height: 60px;
+
+  background: url("../img/trade_bg.png") no-repeat;
+  /*background-color: #333333;*/
+  background-size: 100% auto;
+  border:0px;
+  color: #fcd953;
+}
+
+/**App Common components**/
+.clear {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 20px;
+}
+.app-divider {
+  background: #f5f5f5;
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 8px;
+}
+.app-card-tab-title{
+  width: 100%;
+  height: 45px;
+}
+
+.app-card-tab-title .col{
+  float: left;
+  width: 33%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+
+  text-align: center;
+  padding: 10px;
+  border-bottom:1px solid #959595;
+}
+.app-card-tab-title .col:nth-child(3){
+  width: 34%;
+}
+.app-card-tab-title .active{
+  border-bottom:2px solid #ffd01b;
+  color: #e3b400;
+}
+
+.app-common-header{
+  height: 45px;
+  line-height: 45px;
+  padding: 5px;
+  background:#fcd953;
+}
+
+.app-big-button{
+  width: 100%;
+  background-color: #f3d356;
+  -webkit-border-radius: 5px;
+  border: 0px;
+  -webkit-box-shadow:0px 3px 0px 0px #b69102 ;
+  font-size: 18px;
+  font-weight: bold;
+}
+.btn-white{
+  background-color: #fff;
+  border: 1px solid #707070;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  -webkit-border-radius: 5px;
+}
+
+
+/**for model**/
+.qshow {
+  opacity: 0;
+}
+
+.qshow.ng-enter-active,
+.qshow > .ng-enter-active {
+  opacity: 1;
+}
+
+.app-popup-top{
+  background: url('../img/popup_bg_1.png') repeat-y;
+  background-size:0.8% auto;
+  height: 100%;
+  width: 100%;
+  background-position:center 0;
+  background-attachment:fixed;
+}
+.app-popup-content{
+  background: url('../img/popup_bg_2.png') no-repeat top;
+  background-size:17% auto;
+  background-color: #fcd953;
+  border: none;
+  border-radius: 5px;
+  width:100%;
+  padding: 70px 20px 0px 20px;
+  bottom: -100%;
+}
+
+.item:first-child{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.item:last-child{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/**App Index**/
+.app-index-header{
+  height: 45px;
+  line-height: 45px;
+  padding: 5px;
+  background:-webkit-gradient(linear, 0 0, 100% 0, from(#fcd953), to(#e98157));
+}
+
+
+.bar .button.button-icon .icon::before,
+.bar .button.button-icon::before,
+.bar .button.button-icon.icon-left::before,
+.bar .button.button-icon.icon-right::before{
+  font-size: 25px;
+}
+
+.app-index-input-search input::-webkit-input-placeholder {
+  color:#222020;
+}
+
+.app-index-slide .slider-pager{
+  bottom:0px;
+  font-size: 10px;
+}
+.app-index-myteam{
+  margin: 0 auto;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #f5f5f5;
+}
+.app-index-myteam .app-index-card-divider{
+  border: 0px;
+}
+
+.team-round-img{
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 30px;
+}
+.app-index-myteam .item{
+  padding: 10px 16px 16px 16px;
+  font-size: 14px;
+}
+.app-index-myteam .item .col1{
+  float: left;
+  width: 25%;
+  padding-left: 3%;
+}
+.app-index-myteam .item .col2{
+  float: left;
+  width: 50%;
+  margin-left: 6%;
+}
+.app-index-myteam .item .col3{
+  float: left;
+  width: 15%;
+  margin-left: 10px;
+  padding-right: 5px;
+}
+.app-index-myteam .item .col1 .rankno{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #fffcfd;
+  text-align: center;
+  font-size: 10px;
+}
+.app-index-myteam .item .col2 h2{
+  font-size: 14px;
+  font-weight: 200;
+  color: #0c93fb;
+}
+.app-index-myteam .item .col2 .v{
+  color: #e2972d;
+  font-size: 15px;
+  margin-left: 20px;
+}
+.app-index-myteam .item .col2 h1{
+  font-size: 14px;
+  font-weight:bold;
+  color: #010813;
+  margin: 0 0 3px 0px;
+
+}
+.app-index-myteam .item .col2 span{
+  color: #010813;
+  text-overflow: inherit;
+  white-space: normal;
+  font-size: 12px;
+}
+.app-index-myteam .item .col3 span{
+  background-color: #56b3fb;
+  color: #ffffff;
+  padding: 2px 7px 2px 7px;
+
+}
+.app-index-myteam .item .col3 h2{
+  color: #010813;
+  padding: 12px 7px 10px 7px;
+  font-size: 16px;
+  overflow: visible;
+}
+.app-index-myteam .item .col3 .fans{
+  background-size:contain;
+  color: #fe8308;
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+}
+.app-index-myteam .item .col3 .add{
+  background-color: #e2972d;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+/**战队首页**/
+.app-team-index{
+
+}
+.app-team-index .index-header{
+  width: 100%;
+  height: 210px;
+  background-color: #fff;
+  overflow: hidden
+}
+
+.app-team-index .index-header .toolbar{
+  background: transparent; top: 0px;left: 0px;z-index: 50;position: relative;
+}
+
+.app-team-index .index-header .toolbar h1,
+.app-team-index .index-header .toolbar a,
+.app-team-index .index-header .team-info h5{
+  color: #fff;
+}
+.app-team-index .index-header .bg{
+  height: 250px; width:110%;
+  overflow: hidden;
+  opacity: 0.8;
+  -webkit-filter: blur(5px);
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  bottom: -10px;
+}
+
+.app-team-index .index-header .team-info{
+  text-align: center;
+  width: 100%;
+  position: relative;
+  color: #fff;
+  bottom: -10px;
+}
+
+.app-team-index .app-team-index-tab-hd{
+  position: relative;
+  background: #fff;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  text-align: center;
+
+}
+.app-team-index .app-team-index-tab-hd .col{
+  width: 60px;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  border: none  ;
+  float: left;
+}
+
+.app-team-index .app-team-index-tab-hd .active{
+  border-bottom:2px solid #ffd01b;
+  color: #e3b400;
+}
+.app-team-index .row{
+  margin: 0px;
+}
+.app-team-index .row .col{
+  text-align: center;
+}
+.app-team-index .row .col span{
+  margin-top:3px;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.app-team-index-discuss-list{
+  margin: 0 auto;
+}
+.app-team-index-discuss-list .feedback-tip{
+  font-size: 12px;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #eeeeee;
+}
+.app-team-index-discuss-list .feedback-tip a:active{
+  background: rgba(86,179, 251, 0.5);
+}
+
+.app-team-index-discuss-list .item {
+  font-size: 12px;
+  padding:inherit;
+  padding: 5px 2%;
+  margin: inherit;
+  border-bottom: none;
+}
+.app-team-index-discuss-list .toolbar{
+  margin-top: 5px;
+  margin-bottom: 7px;
+  height:15px;
+  padding: 0px;
+  font-weight: 200;
+}
+
+.app-team-index-discuss-list .toolbar .col{
+padding: 0px;
+  color: #000;
+}
+
+.app-team-index-discuss-list .item .row .col{
+  text-align: left;
+}
+.app-team-index-discuss-list .item .row h4{
+  font-weight: 800;
+}
+.app-team-index-discuss-list .item .row .msg{
+  text-align: left;
+  width: 100%;
+  line-height: 20px;
+  text-align: left;
+  word-wrap:break-word;
+  word-break:break-all;
+  white-space: pre-wrap;
+}
+.app-team-index-discuss-list .item .row .col .nick-name{
+  background: #56b4fc;
+  color: #fff;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+
+.round1{
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 30px;
+  color: #fffcfd;
+  padding: 20px 0px;
+  text-align: center;
+  font-size: 18px;
+}
+.round2{
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 35px;
+  padding: 5px;
+}
+
+.color1{
+  background-color: #ed7650;
+}
+.color11{
+  background-color: #d3623e;
+}
+
+.color2{
+  background-color: #f89a3b;
+}
+
+.color21{
+  background-color: #de9042;
+}
+
+.color3{
+  background-color: #9ccc65;
+}
+
+.color31{
+  background-color: #84b150;
+}
+
+.colorv1{
+  background-color: #6996f3;
+}
+.colorv11{
+  background-color: #5176c1;
+}
+
+.colorv2{
+  background-color: #25c6da;
+}
+
+.colorv21{
+  background-color: #00acc2;
+}
+
+.colorv3{
+  background-color: #4fc2f8;
+}
+
+.colorv31{
+  background-color: #039be6;
+}
+
+.app-index-input-search{
+  width: 80%;
+  height: 25px;
+  line-height: 25px;
+  padding: 2px;
+  top: 15%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: transparent;
+  border-color: #fff9ea;
+}
+.app-index-input-search i{
+  margin-right: 5px;
+  font-size: 100%;
+  color:#222020;
+}
+.app-index-input-search input{
+  color: #222020;
+  height: 20px;
+}
+
+
+/**App Team Rank Page**/
+.app-rank-summary-type{
+  height: 50px;
+}
+.app-rank-summary-type a{
+  width: 50%;
+  position: relative;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.app-rank-summary-type a.active{
+  background: #e5e5e5;
+}
+
+/**App Team Creation**/
+.app-team-creation-view{
+  background-color: #f5f5f5;
+}
+.app-team-creation-body{
+  padding:0px 30px 0px 30px;
+  overflow: visible;
+}
+
+.app-team-creation-body .ruleText{
+  border-radius:6px;
+  width: 100%;
+  height: 80%;
+  border: 1px solid #707070;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.app-team-creation-body .checkboxlabel{
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+}
+
+.app-team-creation-body .search-list{
+
+}
+.app-team-creation-body .search-list .item{
+  padding: 5px 15px;
+  height: 60px; line-height: 60px;
+}
+.app-team-creation-body .search-list .item img,
+.app-team-creation-body .search-list .item h2{
+  /*float: left;*/
+}
+.app-team-creation-body .search-list .item h2{
+  padding: 18px;
+}
+.app-team-creation-body .search-list .item span{
+  float: right;
+  color:#fe8308;
+  font-size: 12px;
+}
+
+/***************交易首页***************/
+.app-trade-index{
+  margin: 0px;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #f5f5f5;
+  color:#2e2e2e;
+  padding: 0px;
+}
+
+.app-trade-index .price-col{
+  width: 33%;
+  height: 100%;
+  float: left;
+  margin-right: 0.5%;
+  text-align: center;
+  padding-top:10px;
+  font-size: 18px;
+}
+.app-trade-index .price-col:nth-of-type(3){
+  margin-right: 0px;
+  width: 33%;
+  float: right;
+  border-right:none;
+}
+.app-trade-index .raise{
+  background: #ff775f;
+  color:#ffffff;
+}
+.app-trade-index .down{
+  background: #87d46c;
+  color:#ffffff;
+}
+
+.app-trade-index .price-normal{
+  width: 33%;
+  height: 100%;
+  float: left;
+  margin-right: 0.5%;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  padding-top: 5px;
+}
+.app-trade-index .price-normal:nth-of-type(3){
+  width: 33%;
+  margin-right: 0px;
+}
+
+.app-trade-index .btn-bar{
+  border-top: none;
+  border-bottom: 1px solid rgba(112,112,112,0.3);
+  height: 30px;
+}
+.app-trade-index .t-btn{
+  width: 20%;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: rgba(245,245,245, 1);
+}
+.app-trade-index .activated{
+  border-right: 1px solid rgba(112,112,112,0.3);
+  border-left: 1px solid rgba(112,112,112,0.3);
+  background-color: #fff;
+}
+.app-trade-index .cu-range{
+  border-right: 1px solid rgba(112,112,112,0.3);
+  border-left: 1px solid rgba(112,112,112,0.3);
+  background-color: #fff;
+}
+
+
+.app-trade-index .chart-con{
+  border-top: 1px solid rgba(112,112,112,0.3);
+  height: 260px;
+  width: 100%;
+}
+.app-trade-index .trade-summary{
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  padding: 0px 5%;
+}
+.app-trade-index .t1{
+  font-size: 16px;
+  font-weight: 600;
+}
+.app-trade-index .t2{
+  font-size: 16px;
+}
+.app-trade-index .up {
+  color: #fc6045;
+}
+.app-trade-index .loss {
+  color: #05c500;
+}
+.app-trade-index .row{
+  margin: 0px;
+}
+.app-trade-index .row .col{
+  text-align: center;
+}
+.app-trade-index .row .col .trade-btn{
+  font-size: 14px;
+  height: 30px;
+  min-height: 30px;
+  line-height: inherit;
+}
+
+.app-trade-index .row .col .button-assertive{
+  border: 1px solid #f88a8a;
+}
+
+.trade-index-fixed-header {
+  position: fixed;
+  display: block;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+  /*pyb add*/
+
+/************交易**************/
+.prdBox{
+  margin-top: 3%;
+  margin-left: 4%;
+  width: 44%; /* ( 100 - 12 ) / 2 */
+  float: left;
+}
+.prdBox .button{
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+}
+.prdBox .upBtn{
+  color:#f88a8a;
+  background-color: #ffffff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid rgba( 248, 138, 138, 0.3 );
+}
+.prdBox .downBtn{
+  color:#8edd72;
+  background-color: #ffffff;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: 1px solid rgba( 142, 221, 114, 0.3 );
+}
+/*被选择的按钮。样式要层层嵌套*/
+.prdBox .chooseUpBtn{
+  color:#ffffff;
+  background-color: #f88a8a;
+}
+.prdBox .chooseDownBtn {
+  color: #ffffff;
+  background-color: #8edd72;
+}
+
+.prdBox .dataBox{
+  border-left: 1px solid rgba( 0,0,0,0.08);
+  border-right: 1px solid rgba( 0,0,0,0.08);
+  text-align: center;
+  padding: 7% 0%;
+}
+.prdBox .dataBox .row{
+  margin: 0px;
+  padding: 0px;
+}
+.prdBox .dataBox .row .col{
+  padding: 0% 1%;
+}
+.prdBox .dataBox .name{
+  font-size: 20px;
+  text-align: right;
+}
+.prdBox .dataBox .weight{
+  font-size: 15px;
+  margin-top: 5px;
+  text-align: left;
+}
+.prdBox .dataBox .price{
+  margin: 7% 0%;
+  font-size: 22px;
+  font-weight: lighter;
+}
+.prdBox .dataBox .price span{
+  font-size: 20px;
+}
+.prdBox .dataBox .floatEarn{
+  font-size: 13px;
+}
+.buildBox{
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 3% 4%;
+  font-size: 16px;
+  color: #2e2e2e;
+
+  /*/////////////////////////////*/
+  display: none;
+}
+.buildBox .infoBox{
+  padding: 1%;
+  border-bottom: 1px solid rgba( 0,0,0,0.08 );
+}
+.buildBox .infoBox div{
+  margin-bottom: 3%;
+}
+.buildBox .amountBox{
+  padding: 4% 2%;
+  padding-bottom: 0px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba( 0,0,0,0.08 )
+}
+.buildBox .amountBox .row{
+  margin: 0px;
+  padding: 0px;
+}
+.buildBox .amountBox .row1_5 .col, .buildBox .amountBox .row6_10 .col{
+  margin: 0px;
+  padding: 2.5% 0%;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.3);
+  border-right: 1px solid rgba(0,0,0,0.3);
+}
+.buildBox .amountBox .row6_10 .col{
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.buildBox .selected_bg{
+  background-color: #ffffff;
+}
+.buildBox .unselected_bg{
+  background-color: #f5f5f5;
+}
+.buildBox .amountBox .checkboxlabel{
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+}
+
+/*赢家券输入手机号*/
+.app-trade-winTicket-recommendGift-view{
+  background-color: #f5f5f5;
+}
+.app-trade-winTicket-recommendGift-view .app-trade-winTicket-recommendGift-body{
+  padding: 8% 10%;
+  overflow: visible;
+  padding-top: 10%;
+  text-align: center;
+  color: #2e2e2e;
+}
+.app-trade-winTicket-recommendGift-view .app-trade-winTicket-recommendGift-body .text{
+  width: 100%;
+  margin: 4.5% auto;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+}
+.app-trade-winTicket-recommendGift-view .app-trade-winTicket-recommendGift-body .numBox{
+  width: 80%;
+  padding: 4%;
+  margin: 10% auto;
+  margin-top: 20%;
+  border: 1px solid rgba( 0,0,0,0.3);
+  background-color: #ffffff;
+  border-radius: 4px;
+  font-size: 20px;
+}
+.app-trade-winTicket-recommendGift-view .app-trade-winTicket-recommendGift-body a{
+  padding: 3%;
+  width: 80%;
+  font-size: 20px;
+  box-shadow: 0px 1px 2px rgba( 0,0,0,0.5);
+  text-decoration: none;
+}
+
+/*赢家券*/
+.app-trade-winTicket-phoneNum-view{
+  background-color: #f5f5f5;
+}
+.app-trade-winTicket-phoneNum-view .app-trade-winTicket-phoneNum-body{
+  overflow: visible;
+}
+.app-trade-winTicket-phoneNum-view .app-trade-winTicket-phoneNum-body .row{
+  margin: 0px;
+  padding: 0px;
+  background: #ffffff;
+  margin: 3% 0%;
+}
+.app-trade-winTicket-phoneNum-view .app-trade-winTicket-phoneNum-body .row .col{
+  text-align: center;
+  font-size: 18px;
+  padding: 5%;
+}
+.app-trade-winTicket-phoneNum-view .app-trade-winTicket-phoneNum-body .row .active{
+  color: #ffca00;
+  border-bottom: 1px solid #ffca00;
+}
+
+
+/***********首页***************/
+
+/*创建圈子 -> 企业认证*/
+.authentication-view .app-team-creation-body .list .item input::-webkit-input-placeholder {
+  color:#707070;
+  text-align: center;
+  font-size: 18px;
+}
+
+/*查找、加入圈子*/
+.app-team-search-view{
+  background-color: #f5f5f5;
+}
+.app-team-search-view .app-team-search-body{
+  padding: 0% 10%;
+  overflow: visible;
+  text-align: center;
+}
+.app-team-search-view .app-team-search-body h3{
+  font-size: 19px;
+  color: rgba( 0, 0, 0, 1 );
+  margin: 15% auto;
+  margin-top: 20%;
+}
+.app-team-search-view .app-team-search-body .app-team-search{
+  padding: 0% 5%;
+  width: 90%;
+  margin: 0% auto;
+  border-radius: 3px;
+}
+.app-team-search-view .app-team-search-body .app-team-search a{
+  text-decoration: none;
+  color: rgba( 0,0,0, 0.8);
+}
+.app-team-search-view .app-team-search-body .list{
+  width: 90%;
+  margin: 3% auto;
+  border-radius: 3px;
+}
+.app-team-search-view .app-team-search-body .list .item{
+  padding: 3% 5%;
+  text-align: left;
+}
+.app-team-search-view .app-team-search-body .list .item a{
+  text-decoration: none;
+  color: #2e2e2e;
+}
+
+/*查找结果*/
+.app-team-searchResult-view{
+  background-color: #f5f5f5;
+}
+.app-team-searchResult-view .app-team-searchResult-body{
+  padding: 0% 10%;
+  overflow: visible;
+  text-align: center;
+}
+.app-team-searchResult-view .app-team-searchResult-body .box{
+  padding: 5%;
+  margin: 15% auto;
+  background-color: #ffffff;
+  border: 1px solid rgba( 0,0,0,0.3 );
+  border-radius: 3px;
+  text-align: center;
+}
+.app-team-searchResult-view .app-team-searchResult-body .box img{
+  width: 25%;
+  height: 25%;
+  border-radius: 100px;
+}
+.app-team-searchResult-view .app-team-searchResult-body .box div{
+  margin-top: 5%;
+  color: #2e2e2e;
+}
+
+/*申请加入*/
+.app-team-joinRequest-view{
+  background-color: #f5f5f5;
+}
+.app-team-joinRequest-view .app-team-joinRequest-body{
+  padding: 0% 10%;
+  overflow: visible;
+  text-align: center;
+}
+.app-team-joinRequest-view .app-team-joinRequest-body textarea{
+  width: 100%;
+  padding: 5%;
+  border: 1px solid rgba( 0,0,0,0.15 );
+  border-radius: 3px;
+}
+
+/*发帖*/
+.app-team-index-posts-view{
+  background-color: #f5f5f5;
+}
+.app-team-index-posts-view .app-team-index-post-body{
+  padding: 8% 10%;
+  overflow: visible;
+}
+.app-team-index-posts-view .app-team-index-post-body #postsText {
+  border-radius: 6px;
+  width: 100%;
+  border: 1px solid gainsboro;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/*邀请*/
+.app-team-index-invite-view{
+  background-color: #f5f5f5;
+}
+.app-team-index-invite-view .app-team-index-invite-body{
+  padding: 0%;
+  overflow: visible;
+  text-align: center;
+}
+.app-team-index-invite-view .app-team-index-invite-body h3{
+  padding-top: 30%;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000000
+}
+.app-team-index-invite-view .app-team-index-invite-body button{
+  width: 60%;
+  padding: 3%;
+  margin-top: 10%;
+  border: 1px solid rgba( 0,0,0, 0.3 );
+}
+.app-team-index-invite-view .app-team-index-invite-body .riseBox{
+
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  width: 100%;
+  background-color: #ffffff;
+  font-size: 16px;
+  color: #2e2e2e;
+  padding-left: 15%;
+  border-top: 1px solid rgba( 0,0,0,0.2);
+
+  display: none;
+}
+.app-team-index-invite-view .app-team-index-invite-body .riseBox .box{
+  float: left;
+  width: 45%;
+  text-align: center;
+  margin: 10% auto;
+}
+.app-team-index-invite-view .app-team-index-invite-body .riseBox .box i{
+  font-size: 35px;
+}
+
+
+/*圈子公告*/
+.app-team-index-notice-view{
+  background-color: #f5f5f5;
+}
+.app-team-index-notice-view .app-team-index-notice-body{
+  padding: 8% 10%;
+  overflow: visible;
+}
+.app-team-index-notice-view .app-team-index-notice-body #postsText {
+  border-radius: 6px;
+  width: 100%;
+  border: 1px solid gainsboro;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/*申请退出*/
+.app-team-index-quit-view{
+  background-color: #f5f5f5;
+}
+.app-team-index-quit-view .app-team-index-quit-body{
+  padding: 13% 15%;
+  overflow: visible;
+}
+.app-team-index-quit-view .app-team-index-quit-body .box{
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #000000;
+  position: relative;
+}
+.app-team-index-quit-view .app-team-index-quit-body .box .list{
+  padding: 20% 0%;
+  padding-left: 15%;
+}
+.app-team-index-quit-view .app-team-index-quit-body .box .list .item i{
+  color: #f6c300;
+}
+.app-team-index-quit-view .app-team-index-quit-body .box .list .item .item-content{
+  background-color: #ffffff;
+  padding: 5% 0%;
+  padding-left: 6%;
+  padding-right: 0px;
+}
+.app-team-index-quit-view .app-team-index-quit-body .box .list .item .item-content i{
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgba( 0,0,0,0.3 );
+}
+.app-team-index-quit-view .app-team-index-quit-body .box .list .item .item-content span{
+  font-size: 18px;
+  padding: 5%;
+}
+
+
+/*讨论-帖子详情*/
+.app-team-index-tab-discuss-detail-view{
+  margin: 0px auto;
+  background-color: #f5f5f5;
+}
+.app-team-index-tab-discuss-detail-view .app-team-index-tab-discuss-detail-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-team-index-tab-discuss-detail-view .app-team-index-tab-discuss-detail-body .block{
+  margin-bottom: 10px;
+  padding: 2% 3%;
+  background-color: #ffffff;
+  border-bottom: 1px solid darkgray;
+}
+.app-team-index-tab-discuss-detail-view .app-team-index-tab-discuss-detail-body .block .row{
+  margin: 0px;
+}
+.app-team-index-tab-discuss-detail-view .app-team-index-tab-discuss-detail-body .block .nick-name{
+  background: #56b4fc;
+  color: #fff;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+}
+.app-team-index-tab-discuss-detail-view .app-team-index-tab-discuss-detail-body  .block .msg{
+  width: 100%;
+  line-height: 20px;
+  text-align: left;
+  word-wrap:break-word;
+  word-break:break-all;
+  white-space: pre-wrap;
+}
+.app-team-index-tab-discuss-detail-view .footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  line-height: 18px;
+  border-top: 1px solid gainsboro;
+  background-color: #ffffff;
+  text-align: center;
+}
+.app-team-index-tab-discuss-detail-view .row{
+  margin: 0px;
+}
+.app-team-index-tab-discuss-detail-view .footer .toolbar{
+  padding: 0px;
+  color: #000;
+}
+.app-team-index-tab-discuss-detail-view .footer .toolbar .col{
+  padding: 0px;
+  color: #000;
+}
+
+/*成员*/
+.team-index-tab-member-body{
+  margin: 0px;
+  padding: 0px;
+  background-color: #f5f5f5;
+}
+.team-index-tab-member-body .team-index-tab-member-listItem{
+  padding: 0px;
+}
+.team-index-tab-member-body .team-index-tab-member-listItem .nick-name{
+  background: #56b4fc;
+  color: #fff;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+}
+.team-index-tab-member-body .team-index-tab-member-listItem .deleteMemberBtn{
+  background-color: #f05c2e;
+  padding: 0px 20px;
+  color: #fdfeff;
+}
+.team-index-tab-member-body .host{
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  text-align: center;
+}
+.team-index-tab-member-body .host .nick-name{
+  background: #56b4fc;
+  color: #fff;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+/*************关注页面***********/
+/*首页*/
+.app-sub-index-body{
+  background-color: #f5f5f5;
+}
+.app-sub-index-body .block{
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+.app-sub-index-body .block .col1{
+  float: left;
+  width: 25%;
+  padding-left: 3%;
+}
+.app-sub-index-body .block .col2{
+  float: left;
+  width: 50%;
+  margin-left: 6%;
+}
+.app-sub-index-body .block .col3{
+  float: left;
+  width: 15%;
+  margin-left: 10px;
+  padding-right: 5px;
+}
+.app-sub-index-body .item{
+  padding: 10px 16px 16px 16px;
+  font-size: 14px;
+}
+.app-sub-index-body .block .item .col2 h2{
+  font-size: 14px;
+  font-weight: 200;
+  color: #0c93fb;
+}
+.app-sub-index-body .block .item .col2 h1{
+  font-size: 14px;
+  font-weight:bold;
+  color: #010813;
+  margin: 0 0 3px 0px;
+}
+.app-sub-index-body .block .item .col2 span{
+  color: #010813;
+  text-overflow: inherit;
+  white-space: normal;
+  font-size: 12px;
+}
+.app-sub-index-body .block .item .col3{
+  text-align: center;
+}
+.app-sub-index-body .block .item .col3 span{
+  background-color: #56b3fb;
+  color: #ffffff;
+  padding: 2px 7px 2px 7px;
+}
+.app-sub-index-body .block .item .col3 h2{
+  color: #010813;
+  padding: 12px 7px 10px 7px;
+  font-size: 16px;
+  overflow: visible;
+}
+.app-sub-index-body .block .item .col3 .num{
+  color: #000000;
+  font-size: 20px;
+  position: relative;
+}
+.app-sub-index-body .block .item .col3 .num2{
+  color: #fcffff;
+  background-color: #56b2fb;
+  padding: 2px 7px 2px 7px;
+}
+.app-sub-index-body .block .recommend{
+  float: left;
+  color: #010813;
+}
+.app-sub-index-body .block .change{
+  float: right;
+  color: #707070;
+}
+.app-sub-index-body .block .subItem{
+  float: left;
+  position: relative;
+  width: 33%;
+  text-align: center;
+  margin: 20px auto;
+}
+.app-sub-index-body .block .subItem .subItem_img{
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+.app-sub-index-body .block .subItem h1{
+  font-size: 12px;
+  font-weight: bold;
+  color: #010813;
+  margin: 5px auto;
+  margin-top: 15px;
+}
+.app-sub-index-body .block .subItem span{
+  color: #010813;
+  text-overflow: inherit;
+  white-space: normal;
+  font-size: 12px;
+}
+.app-sub-index-body .block .subItem .addSub{
+  font-size: 12px;
+  width: 50%;
+  padding: 3px 5px;
+  color: #ffaa31;
+  border: 1px solid #a9a9a9;
+}
+
+/************个人中心tab************/
+/*公共部分*/
+.item_border_bottom{
+  border-bottom: 2px solid rgba( 0,0,0,0.08 );
+}
+.row{
+  margin: 0px
+}
+.itemPadding{
+  padding: 3.5% 8%;
+}
+.row .col-13 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 13.0%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 13.0%;
+  -ms-flex: 0 0 13.0%;
+  flex: 0 0 13.0%;
+  max-width: 13.0%;
+}
+.row .col-17 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 17.0%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 17.0%;
+  -ms-flex: 0 0 17.0%;
+  flex: 0 0 17.0%;
+  max-width: 17.0%;
+}
+.row .col-7 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 7.0%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 7.0%;
+  -ms-flex: 0 0 7.0%;
+  flex: 0 0 7.0%;
+  max-width: 7.0%;
+}
+.row .col-30 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 30.0%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 30.0%;
+  -ms-flex: 0 0 30.0%;
+  flex: 0 0 30.0%;
+  max-width: 30.0%;
+}
+.row .col-40 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 40.0%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 40.0%;
+  -ms-flex: 0 0 40.0%;
+  flex: 0 0 40.0%;
+  max-width: 40.0%;
+}
+
+/*个人中心*/
+.app-account-index-header{
+  background-color: #fcd230;
+  border: 0px;
+}
+.app-account-index-header .header_img{
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  margin-left: 5%;
+}
+.app-account-index-body{
+  background-color: #f5f5f5;
+  color: #2e2e2e
+}
+.app-account-index-body .loginAccountPageHeader{
+  width: 100%;
+  background-color: #fcd230;
+  position: relative;
+  margin: 0px;
+}
+.app-account-index-body .loginAccountPageHeader .totalAssets{
+  color: #fefff2;
+  font-size: 18px;
+  padding: 6%;
+}
+.app-account-index-body .loginAccountPageHeader .amountOfMoney{
+  color: #fefff2;
+  font-size: 45px;
+  font-weight: lighter;
+  margin-bottom: 3%;
+}
+.app-account-index-body .loginAccountPageHeader .securities{
+  float: left;
+  margin-top: 15%;
+  margin-left: 12%;
+  margin-bottom: 2%;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.app-account-index-body .loginAccountPageHeader .securities .securitiesNum{
+  font-size: 20px;
+}
+.app-account-index-body .loginAccountPageHeader .remain{
+  float: right;
+  margin-top: 15%;
+  margin-right: 12%;
+  margin-bottom: 2%;
+  color: #fff;
+  text-align: center;
+}
+.app-account-index-body .loginAccountPageHeader .remain .remainNum{
+  font-size: 20px;
+}
+.app-account-index-body .recharge{
+  float: left;
+}
+.app-account-index-body .withdraw{
+  float: right;
+}
+.app-account-index-body .icon-size{
+  font-size: 20px;
+}
+.app-account-index-body .arrow_right{
+  float: right;
+  margin-right: 1%;
+}
+
+/***********个人主页**************/
+
+/*消息*/
+.app-account-news-view{
+  background-color: #f5f5f5;
+}
+.app-account-news-view .app-account-news-body{
+  padding: 0%;
+  overflow: visible;
+}
+.app-account-news-view .app-account-news-body .item{
+  padding: 6% 5%;
+  margin: 0px;
+  border-bottom: 1px solid rgba( 0,0,0,0.2);
+}
+.app-account-news-view .app-account-news-body .item .iconDiv i{
+  padding: 2% 4%;
+  margin-right: 2%;
+  font-size: 40px;
+  border-radius: 6px;
+  float: left;
+}
+
+/*消息详情*/
+.app-account-news-content-view{
+  background-color: #f5f5f5;
+}
+.app-account-news-content-view .app-account-news-content-body{
+  padding: 0%;
+  overflow: visible;
+}
+.app-account-news-content-view .app-account-news-content-body .newsBox{
+  padding: 2% 5%;
+}
+.app-account-news-content-view .app-account-news-content-body .newsBox img{
+  width: 73%;
+}
+.app-account-news-content-view .app-account-news-content-body .newsBox .news{
+  width: 80%;
+  float: left;
+  background-color: #ffffff;
+  position: relative;
+  border: 1px solid rgba( 0,0,0,0.1 )
+}
+.app-account-news-content-view .app-account-news-content-body .newsBox .news .newsContent{
+  padding: 0% 7%;
+  border-bottom: 1px solid rgba( 0,0,0,0.1 );
+}
+.app-account-news-content-view .app-account-news-content-body .newsBox .news .newsContent .text{
+  font-size: 15px;
+  line-height: 20px
+}
+.app-account-news-content-view .app-account-news-content-body .newsBox .news .newsContent img{
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+}
+
+/*系统消息*/
+.app-account-news-content-systemNews-view{
+  background-color: #f5f5f5;
+}
+.app-account-news-content-systemNews-view .app-account-news-content-systemNews-body{
+  padding: 8% 10%;
+  overflow: visible;
+  text-align: center;
+}
+.app-account-news-content-systemNews-view .app-account-news-content-systemNews-body img{
+  width: 25%;
+  height: 25%;
+  border-radius: 100px;
+  margin-top: 15%;
+}
+.app-account-news-content-systemNews-view .app-account-news-content-systemNews-body .text{
+  width: 80%;
+  margin: 0% auto;
+  margin-top: 10%;
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 30px;
+}
+.app-account-news-content-systemNews-view .app-account-news-content-systemNews-body .checkboxlabel{
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  width: 75%;
+  margin: 0% auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+.app-account-news-content-systemNews-view .app-account-news-content-systemNews-body .app-big-button{
+  margin-top: 10%;
+}
+
+/*我的动态*/
+.app-account-dynamic-view{
+  background-color: #f5f5f5;
+}
+.app-account-dynamic-view .app-account-dynamic-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-dynamic-view .app-account-dynamic-body .myBlock{
+  background-color: #ffffff;
+  padding: 5% 10%;
+  border: none;
+  margin-bottom: 5%;
+}
+.app-account-dynamic-view .app-account-dynamic-body .myBlock .myImg{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 10%
+}
+.app-account-dynamic-view .app-account-dynamic-body .myBlock div{
+  text-align: center;
+}
+.app-account-dynamic-view .app-account-dynamic-body .myBlock div .myName{
+  font-size: 20px;
+  margin: 5% 0px;
+}
+.app-account-dynamic-view .app-account-dynamic-body .myBlock div .myNickName{
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5%;
+  margin: 15%;
+  background-color: #56b2f6;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList{
+  margin: 0px;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item {
+  font-size: 12px;
+  border: none;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .detailType{
+  color: #000000;
+  font-size: 15px;
+  float: left;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .detailType .replyText{
+  font-size: 13px;
+  color: #010813;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .time{
+  color: gray;
+  float: right;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .authorBox{
+  margin: 0px;
+  margin-top: 7%;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .authorBox .authorImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .authorBox .authorName{
+  margin: 0% 5%;
+  margin-top: 3%;
+  text-align: center;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .authorBox  .authorNickName{
+  margin: 15%;
+  background: #56b4fc;
+  color: #fff;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .toolbar {
+  margin-top: 2px;
+  margin-bottom: 5%;
+  height: 25px;
+  padding: 0px;
+  font-weight: 200;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.app-account-dynamic-view .app-account-dynamic-body .account-dynamicList .item .row .msg{
+  text-align: left;
+  width: 100%;
+  line-height: 20px;
+  text-align: left;
+  word-wrap:break-word;
+  word-break:break-all;
+  white-space: pre-wrap;
+  color: #444444;
+  font-size: 13px;
+}
+
+/*我的收藏*/
+.app-account-collection-view{
+  background-color: #f5f5f5;
+}
+.app-account-collection-view .app-account-collection-view{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList{
+  margin: 0px;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item {
+  font-size: 12px;
+  border: none;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .detailType{
+  color: #000000;
+  font-size: 15px;
+  float: left;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .detailType .replyText{
+  font-size: 13px;
+  color: #010813;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .time{
+  color: gray;
+  float: right;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .authorBox{
+  margin: 0px;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .authorBox .authorImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .authorBox .authorName{
+  margin: 0% 5%;
+  margin-top: 3%;
+  text-align: center;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .authorBox  .authorNickName{
+  margin: 15%;
+  background: #56b4fc;
+  color: #fff;  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+}
+.app-account-collection-view .app-account-collection-view .account-dynamicList .toolbar {  margin-top: 2px;  margin-bottom: 5%;  height: 25px;  padding: 0px;  font-weight: 200;  text-align: center;  background-color: #ffffff;  border-top: 1px solid rgba(0,0,0,0.3);  border-bottom: 1px solid rgba(0,0,0,0.3);  }
+.app-account-collection-view .app-account-collection-view .account-dynamicList .item .row .msg{  text-align: left;  width: 100%;  line-height: 20px;  text-align: left;  word-wrap:break-word;  word-break:break-all;  white-space: pre-wrap;  color: #444444;  font-size: 13px;  }
+
+/*交易历史*/
+.app-account-history-view{
+  background-color: #f5f5f5;
+}
+.app-account-history-view .app-account-history-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-history-view .app-account-history-body .chooseMonth{
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10%;
+  margin-top: 3%;
+}
+.app-account-history-view .app-account-history-body .chooseMonth li{
+  display: inline;
+}
+.app-account-history-view .app-account-history-body .chooseMonth .text{
+  font-size: 18px;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+.app-account-history-view .app-account-history-body .chooseMonth .month{
+  font-size: 18px;
+  font-weight: 400;
+  padding: 3% 10%;
+  border: 1px solid #707070;
+  border-radius: 3px;
+}
+.app-account-history-view .app-account-history-body .sumData{
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-top: 4%;
+}
+.app-account-history-view .app-account-history-body .sumData .col{
+  color: #2e2e2e;
+  /*margin-top: 2%;*/
+  font-size: 18px;
+  font-weight: 600;
+  padding: 2% 5%;
+}
+.app-account-history-view .app-account-history-body .sumData .col .number{
+  margin-top: 10%;
+}
+.app-account-history-view .app-account-history-body .dataListItem{
+  width: 90%;
+  font-size: 16px;
+  color: #2e2e2e;
+  background-color: white;
+  border-bottom: 1px solid  rgba(0,0,0,0.08);
+  padding-top: 7%;
+  margin: 0px auto;
+}
+
+/*经纪人*/
+.app-account-brokers-view{
+  background-color: #f5f5f5;
+}
+.app-account-brokers-view .app-account-brokers-header{
+  background-color: #fcd230;
+  border: 0px;
+}
+.app-account-brokers-view .app-account-brokers-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-index-body .app-account-brokers-body .header{
+  width: 100%;
+  background-color: #fcd230;
+  position: relative;
+  margin: 0px;
+}
+.app-account-brokers-view .app-account-brokers-body .header .myIncomeText{
+  color: #fefff2;
+  font-size: 18px;
+  padding: 5%;
+}
+.app-account-brokers-view .app-account-brokers-body .header .myIncome{
+  color: #fefff2;
+  font-size: 45px;
+  font-weight: lighter;
+  margin-bottom: 3%;
+}
+.app-account-brokers-view .app-account-brokers-body .header .row{
+  margin-top: 15%;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 3%;
+}
+.app-account-brokers-view .app-account-brokers-body .header .row a{
+  text-decoration: none;
+  color: #fefff2;
+}
+.app-account-brokers-view .app-account-brokers-body .header .row .col{
+  font-size: 18px;
+  text-align: center;
+}
+.app-account-brokers-view .app-account-brokers-body .header .row .col .num{
+  font-size: 20px;
+  margin-top: 10%;
+}
+.app-account-brokers-view .app-account-brokers-body .QR_code{
+  background-color: #ffffff;
+  margin-top: 5%;
+  padding: 1% 4%;
+}
+.app-account-brokers-view .app-account-brokers-body .QR_code .myImg{
+  margin: 3% 5%;
+  float: left;
+}
+.app-account-brokers-view .app-account-brokers-body .QR_code .myImg img{
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+.app-account-brokers-view .app-account-brokers-body .QR_code .text{
+  color: #000000;
+  font-size: 20px;
+  margin-top: 7%;
+  float: left;
+}
+.app-account-brokers-view .app-account-brokers-body .QR_code .myCode{
+  margin: 3% 5%;
+  float: right;
+}
+.app-account-brokers-view .app-account-brokers-body .QR_code .myCode img{
+  width: 50px;
+  height: 50px;
+}
+
+/*我的收入*/
+.app-account-brokers-income-view{
+  background-color: #f5f5f5;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .chooseTime{
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10% 0%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .chooseTime li{
+  display: inline;
+  color: #2e2e2e;
+  font-size: 17px;
+  font-weight: 600;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .chooseTime .dateBox{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 2% 3%;
+  border: 1px solid rgba( 0,0,0,0.3 );
+  border-radius: 3px;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data{
+  background-color: #ffffff;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .sumIncome{
+  font-size: 17px;
+  font-weight: 600;
+  color: #2e2e2e;
+  padding: 3% 5%;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .fixedBox{
+  position: fixed;
+  width: 25%;
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .fixedBox .title{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 15% 0px;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .fixedBox .content{
+  border-right: 1px solid rgba( 0,0,0,0.08 );
+  padding: 16% 0px;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .slideBox{
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .slideBox .title {
+  padding: 1.3% 0px;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .slideBox .title .col{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 3.8% 0px;
+}
+.app-account-brokers-income-view .app-account-brokers-income-body .data .slideBox .content .col{
+  padding: 2.6% 0px;
+}
+
+/*直属客户*/
+.app-account-brokers-customer-view{
+  background-color: #f5f5f5;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .inputBox{
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 5% 13%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .inputBox input::-webkit-input-placeholder {
+  color:#707070;
+  text-align: center;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data{
+  background-color: #ffffff;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .sumIncome{
+  font-size: 17px;
+  font-weight: 600;
+  color: #2e2e2e;
+  padding: 3% 5%;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .fixedBox{
+  position: fixed;
+  width: 25%;
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .fixedBox .title{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 15% 0px;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .fixedBox .content{
+  border-right: 1px solid rgba( 0,0,0,0.08 );
+  padding: 16% 0px;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .slideBox{
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .slideBox .title {
+  padding: 1.3% 0px;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .slideBox .title .col{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 3.8% 0px;
+}
+.app-account-brokers-customer-view .app-account-brokers-customer-body .data .slideBox .content .col{
+  padding: 2.6% 0px;
+}
+
+/*直属持仓*/
+.app-account-brokers-position-view{
+  background-color: #f5f5f5;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .inputBox{
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 5% 13%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .inputBox input::-webkit-input-placeholder {
+  color:#707070;
+  text-align: center;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data{
+  background-color: #ffffff;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .sumIncome{
+  font-size: 17px;
+  font-weight: 600;
+  color: #2e2e2e;
+  padding: 3% 5%;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .fixedBox{
+  position: fixed;
+  width: 25%;
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .fixedBox .title{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 15% 0px;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .fixedBox .content{
+  border-right: 1px solid rgba( 0,0,0,0.08 );
+  padding: 16% 0px;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .slideBox{
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .slideBox .title {
+  padding: 1.3% 0px;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .slideBox .title .col{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 3.8% 0px;
+}
+.app-account-brokers-position-view .app-account-brokers-position-body .data .slideBox .content .col{
+  padding: 2.6% 0px;
+}
+
+/*直属平仓*/
+.app-account-brokers-close-view{
+  background-color: #f5f5f5;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .chooseTime{
+  background-color:
+  #ffffff;
+  text-align: center;
+  padding: 5% 0%;
+  margin: 3% 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .chooseTime li{
+  display: inline;
+  color: #2e2e2e;
+  font-size: 17px;
+  font-weight: 600;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .chooseTime .dateBox{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 2% 3%;
+  border: 1px solid rgba( 0,0,0,0.3 );
+  border-radius: 3px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .inputBox{
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 5% 13%;
+  margin: 3% 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .inputBox input::-webkit-input-placeholder {
+  color:#707070;
+  text-align: center;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data{
+  background-color: #ffffff;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .sumIncome{
+  font-size: 17px;
+  font-weight: 600;
+  color: #2e2e2e;
+  padding: 3% 5%;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .fixedBox{
+  position: fixed;
+  width: 25%;
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .fixedBox .title{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 15% 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .fixedBox .content{
+  border-right: 1px solid rgba( 0,0,0,0.08 );
+  padding: 16% 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .slideBox{
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .slideBox .title {
+  padding: 1.3% 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .slideBox .title .col{
+  border: 1px solid rgba( 0,0,0,0.08 );
+  border-left: none;
+  padding: 3.8% 0px;
+}
+.app-account-brokers-close-view .app-account-brokers-close-body .data .slideBox .content .col{
+  padding: 2.6% 0px;
+}
+
+/*设置*/
+.app-account-setting-view{
+  background-color: #f5f5f5;
+}
+.app-account-setting-view .app-account-setting-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-setting-view .app-account-setting-body .arrow_right{
+  float: right;
+  margin-right: 1%;
+}
+
+/*账户信息*/
+.app-account-setting-info-view{
+  background-color: #f5f5f5;
+}
+.app-account-setting-info-view .app-account-setting-info-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-setting-info-view .app-account-setting-info-body .itemPadding .myImg{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.app-account-setting-info-view .app-account-setting-info-body .arrow_right{
+  float: right;
+  margin-right: 1%;
+}
+.app-account-setting-info-view .app-account-setting-info-body .arrow_right{
+  font-weight: lighter;
+}
+
+/*消息推送*/
+.app-account-setting-push-view{
+  background-color: #f5f5f5;
+}
+.app-account-setting-push-view .app-account-setting-push-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-setting-push-view .app-account-setting-push-body .item span{
+  line-height: 35px;
+}
+.app-account-setting-push-view .app-account-setting-push-body .item .right{
+  float: right;
+  margin-right: 1%;
+}
+
+/*意见反馈*/
+.app-account-setting-feedback-view{
+  background-color: #f5f5f5;
+}
+.app-account-setting-feedback-view .app-account-setting-feedback-body{
+  margin: 0px;
+  padding: 0px;
+}
+.app-account-setting-feedback-view .app-account-setting-feedback-body .itemPadding div{
+  padding: 1.5% 0%;
+}
+.app-account-setting-feedback-view .app-account-setting-feedback-body .feedbackBox{
+  width: 100%;
+  height: 200px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  margin-bottom: 7%;
+}
+.app-account-setting-feedback-view .app-account-setting-feedback-body textarea::-webkit-input-placeholder {
+  color: rgba( 0,0,0,0.5 );
+  text-align: center;
+  padding: 2%;
+}
+.app-account-setting-feedback-view .app-account-setting-feedback-body textarea::-webkit-input-placeholder:after{
+  display:block;
+  content:"在这里填写你的意见， \A 给个机会我们为你改进吧！"; /*  \A 表示换行  */
+  color: rgba( 0,0,0,0.5 );
+  text-align: center;
+  line-height: 23px;
+}
+.app-account-setting-feedback-view .app-account-setting-feedback-body .contactBtn{
+  width: 100%;
+  padding: 3%;
+  background-color: #ffffff;
+  border: 1px solid rgba( 0,0,0,0.2 );
+  border-radius: 3px;
+  color: rgba( 0,0,0,0.6 );
+  text-align: center;
+}
+
+/*code-model*/
+.app-popup-pop-content{
+  background-size:17% auto;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  width:100%;
+}
+
+
+/***************发现**************/
+/*首页*/
+.app-discovery-index-body{
+  background-color: #f5f5f5;
+}
+.app-discovery-index-body .dataBox{
+  padding: 0% 3%;
+  border-bottom: 1px solid rgba( 0,0,0,0.08 );
+}
+.app-discovery-index-body .dataBox a{
+  text-decoration: none;
+}
+.app-discovery-index-body .dataBox .title{
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 2%;
+  position: relative;
+  overflow: hidden;
+}
+.app-discovery-index-body .dataBox .content{
+  color: #2e2e2e;
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 16px;
+}
+.app-discovery-index-body .dataBox .time{
+  color: #2e2e2e;
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 14px;
+}
+/*发现详情*/
+.app-discovery-detail-view{
+  background-color: #ffffff;
+}
+.app-discovery-detail-view .app-discovery-detail-body{
+  overflow: visible;
+  padding: 2% 3%;
+}
+.app-discovery-detail-view .app-discovery-detail-body .title{
+  font-size: 19px;
+  font-weight: bold;
+}
+.app-discovery-detail-view .app-discovery-detail-body .date{
+  font-size: 14px;
+  color: #888888;
+}
+.app-discovery-detail-view .app-discovery-detail-body .content{
+  margin-top: 4%;
+  color: #2e2e2e;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+
+

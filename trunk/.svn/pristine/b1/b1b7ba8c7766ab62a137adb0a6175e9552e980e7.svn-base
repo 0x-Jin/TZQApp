@@ -1,0 +1,71 @@
+<ion-view view-title="我的收藏" class="app-account-collection-view">
+
+  <!--头部和回退按钮-->
+  <ion-nav-bar class="app-common-header">
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon icon-back" ng-click="goBack()">
+      </a>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content class="app-account-collection-view" has-header="false">
+
+    <div class="account-dynamicList" ng-repeat="d in list">
+
+      <div class="item" >
+
+        <a ng-href="#/tab/collection/account-detail/{{d.member.id}}" ng-click="getDetail($index)" style="text-decoration: none">
+
+          <div class="row authorBox">
+            <div class="col col-10">
+              <img class="authorImg" ng-src="{{d.member.img}}">
+            </div>
+            <div class="col col-20 authorName">
+              <div style="color: #000000;  font-size: 14px;">{{d.member.mName}}</div>
+              <div style="color: gray; font-size: 12px; margin-top: 10%">{{d.member.time}}</div>
+            </div>
+            <div class="col col-20">
+              <div class="authorNickName">{{d.member.nickName}}</div>
+            </div>
+            <div class="col col-20 clear"></div>
+          </div>
+
+          <div class="row">
+            <div class="col col-100 msg" >{{d.msg | limitTo:60}}</div> <!--限制显示字数-->
+          </div>
+        </a>
+
+        <div style="margin-left: 3%" ng-show="d.msg.length > 60">
+          <a ng-href="#/tab/collection/account-detail/{{d.member.id}}" ng-click="getDetail($index)" style="text-decoration: none; color: #f5cd0b; font-size: 13px">
+            全文</a>
+        </div>
+
+      </div>
+
+
+      <div class="row toolbar">
+        <div class="button-clear col col-33" ng-click="" style="border-right: 1px solid rgba(0,0,0,0.3);;">
+          <a class="icon icon-msg" style="margin-right: 10px"></a>{{d.feedback}}
+        </div>
+        <div class="button-clear col col-33" ng-click=""  style="border-right: 1px solid rgba(0,0,0,0.3);;">
+          <a class="icon icon-good" style="margin-right: 10px"></a>{{d.good}}
+        </div>
+        <div class="button-clear col col-33 dropup" >
+          <a style="width: 100%; display: inline-block;" class="icon icon-par dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+            <li><a href="#">取消收藏</a></li>
+            <li><a href="#">举报</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+

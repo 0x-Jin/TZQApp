@@ -1,0 +1,35 @@
+{
+  "total":-234,
+  "list":
+  [
+    {
+      "id": 1,  "prdDesc": "粤银", "weight": "150g", "price": 100, "quantity": 12, "orderType": 0, "amount": 3434,
+      "orderNum": 162840589, "buildDate": "2015-11-02", "bulidTime": "28:45:20", "pay": 10, "brokerage": 0.9
+    }
+  ,
+    {
+      "id": 2, "prdDesc": "粤铜", "weight": "10公斤", "price": 10, "quantity": 10, "orderType": 1, "amount": 344,
+      "orderNum": 143350589, "buildDate": "2015-10-02", "bulidTime": "10:45:20", "brokerage": 0.9
+    }
+  ,
+    {
+      "id": 3, "prdDesc": "粤油", "weight": "1桶", "price": 20, "quantity": 7, "orderType": 1, "amount": -1134,
+      "orderNum": 543240589, "buildDate": "2015-12-02", "bulidTime": "20:45:20", "pay": 50, "brokerage": 0.9
+    }
+  ,
+    {
+      "id": 4, "prdDesc": "粤银", "weight": "3000g", "price": 50, "quantity": 20, "orderType": 0, "amount": 100,
+      "orderNum": 315550589, "buildDate": "2015-10-02", "bulidTime": "16:45:20", "pay": 60, "brokerage": 0.9
+    }
+  ,
+    {
+      "id": 5, "prdDesc": "粤铜", "weight": "200公斤", "price": 700, "quantity": 1, "orderType": 0, "amount": -3434,
+      "orderNum": 675740589, "buildDate": "2015-12-02", "bulidTime": "15:45:20", "pay": 20, "brokerage": 0.9
+    }
+  ,
+    {
+      "id": 123, "prdDesc": "粤油", "weight": "20桶", "price": 20, "quantity": 1, "orderType": 0, "amount": 3434,
+      "orderNum": 23130589, "buildDate": "2015-10-02", "bulidTime": "20:45:20", "pay": 10, "brokerage": 0.9
+    }
+  ]
+}

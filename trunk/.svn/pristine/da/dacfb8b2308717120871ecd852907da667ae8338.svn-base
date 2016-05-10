@@ -1,0 +1,61 @@
+
+<div class="list card app-team-index-discuss-list">
+
+
+  <div ng-repeat="d in list">
+    <a ng-href="#/teamIndex/{{tabName}}/team-index-tab-discuss-detail/{{d.member.id}}" class="item" > <!--pyb add-->
+
+        <div class="row">
+          <div class="col col-20">
+             <img ng-src="{{d.member.img}}" class="team-round-img" style="width: 40px;height: 40px;">
+          </div>
+          <div class="col col-25" >
+            <h3><strong> {{d.member.mName}} </strong></h3>
+            <p style="font-size: 12px">{{d.time}}</p>
+          </div>
+          <div class="col col-50" >
+            <div class="nick-name">{{d.member.nickName}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-100 msg" >{{d.msg | limitTo:60}}</div> <!--pyb add 限制显示字数-->
+        </div>
+      <!--pyb add 是否显示“全文”-->
+        <div class="row" ng-show="d.msg.length > 60">
+          <a ng-href="#/teamIndex/{{tabName}}/team-index-tab-discuss-detail/{{d.member.id}}" ng-click="getDetail($index)" style="text-decoration: none; color: #f5cd0b; font-size: 13px">
+            全文</a>
+        </div>
+      <!--pyb add-->
+
+    </a>
+
+    <!--评论-->
+    <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.2); background: url('img/team-index-discuss-tip.png') 10% bottom no-repeat;">
+      <div ng-if="d.feedbacks" class="feedback-tip" >
+        <div ng-repeat="f in d.feedbacks" style="line-height: 18px"> {{f.mName}}:{{f.feedback}} </div>
+        <div style="color: #56b3fb; line-height: 18px">
+          <a ng-href="#/teamIndex/{{tabName}}/team-index-tab-discuss-detail/{{d.member.id}}" ng-click="getDetail($index)"> <!--pyb add-->
+            查看全部评论</a>
+        </div>
+      </div>
+    </div>
+    <div class="row toolbar">
+      <div class="button-clear col col-33" ng-click="addFeedback()" style="border-right: 1px solid rgba(0,0,0,0.3);;">
+        <a class="icon icon-msg" style="margin-right: 10px"></a>{{d.feedback}}
+      </div>
+      <div class="button-clear col col-33" ng-click="addFeedback()"  style="border-right: 1px solid rgba(0,0,0,0.3);;">
+        <a class="icon icon-good" style="margin-right: 10px"></a>{{d.good}}
+      </div>
+      <div class="button-clear col col-33 dropup" >
+        <a style="width: 100%; display: inline-block;" class="icon icon-par dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+          <li><a href="#">收藏</a></li>
+          <li><a href="#">举报</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="app-divider" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
+  </div>
+</div>
